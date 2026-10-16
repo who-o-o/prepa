@@ -1,0 +1,158 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document} \noindent
+\colorbox{green}{630.2}\\
+Pour \(x \neq 0\) \begin{align*}
+    f(x) &= x^3 \sin \frac{1}{x}\\
+    &= x^3O(1)\\
+    &= x^2O(x)\\
+    &= x^2o(1)\\
+    &= 0 + 0x + 0x^2 + o(x^2) \indent DL_2(0)
+\end{align*}
+Donc \(f(x) \rightarrow_{x \to 0} 0\)\\
+On prolonge f en posant f(0) = 0\\
+Comme \(DL_1(0)\) f (prolongée) est dérivable en 0 et f'(0) = 0\\
+
+\noindent \underline{Pour \(x \neq 0\)} \begin{align*}
+    f'(x) &= 3x^2sin\frac{1}{x} + x^3(-\frac{1}{x^2})cos\frac{1}{x}\\
+    \text{au voisinnage de \(x \to 0\)} \indent &= 3x^2O(1) - xO(1)\\
+    &= O(x^2) + O(x)\\
+    &= O(x)\\
+    &= o(1) \rightarrow_{x\to 0} 0 = f'(0)
+\end{align*}
+Donc f' est continue en 0\begin{align*}
+    f''(x) &= 6xsin\frac{1}{x} + 3x^2(-\frac{1}{x^2})cos\frac{1}{x}-cos\frac{1}{x} - x(-\frac{1}{x^2})(-)sin\frac{1}{x}\\
+    &= (6x-\frac{1}{x})sin\frac{1}{x} - 4cos\frac{1}{x}
+\end{align*}
+pas de limite en 0 car \begin{align*}
+    x_n &= \frac{1}{n\pi}\\
+    f''(x_n) &= -4cos(k\pi)\\
+    &= -4(-1)^n
+\end{align*}
+pas de limite, f n'est pas \(\mathcal{C}^2\)\\
+\begin{align*}
+    f'(x) &= 3x^2sin\frac{1}{x} + x^3(-\frac{1}{x^2})cos\frac{1}{x}\\
+    \delta(x)  &= \frac{f'(x)-f'(0)}{x-0} = 3xsin\frac{1}{x}-cos\frac{1}{x}
+\end{align*}
+en \(x_n = \frac{1}{n\pi}\)\\
+\(\delta(x_n) = (-1)^{n+1}\) pas de limite\\
+donc f n'est pas 2 fois dérivable en 0\\
+
+\noindent \colorbox{green}{630.10}\\
+\begin{itemize}
+    \item f continue \begin{equation*}
+        f(x) \rightarrow_{x\to 0, x>0} 0
+    \end{equation*}
+    \item f'(x) = \(\begin{cases}
+        0 \indent \text{si } x < 0\\
+        ? \indent \text{ si x = 0}\\
+        \frac{1}{x^2}e^{-\frac{1}{x}} \indent \text{ si } x > 0
+    \end{cases}\)
+\end{itemize}
+pour \(x > 0\) \begin{align*}
+    f'(x) &= \frac{(\frac{1}{x^2})}{e^{\frac{1}{x}}} \rightarrow_{x\to 0, x>0} 0 \indent \text{ car } u^2 = o(e^u), u\to +\infty\\
+    f'(x) &\rightarrow_{x\to 0, <} 0
+\end{align*}
+Donc \(f'(x) \rightarrow_{x\to 0}\) 0\\
+\underline{TLDD f \(\mathcal{C}^1\)}\\
+\begin{math}
+    f''(x) = \begin{cases}
+        0 \indent \text{si } x < 0\\
+        ? \indent\text{si x = 0}\\
+        -\frac{2}{x^3}e^{-\frac{1}{x}} + \frac{1}{x^4}e^{-\frac{1}{x}}
+    \end{cases}
+\end{math}
+\underline{rec} 
+\begin{equation*}
+    x>0 f^{(n)}(x) = P_n(\frac{1}{x})e^{-\frac{1}{x}} \rightarrow_{x \to 0} 0
+\end{equation*}
+
+\noindent \colorbox{green}{630.5}\\
+\begin{align*}
+    P(X) &= ((X^2-1)^n)^{(n)}\\
+    degP &= n
+\end{align*}
+Montrons par récurrence que pour tout \(k \in [|0, n|], ((X^2-1)^n)^{(k)}\)
+admet k racines distinctes dans ]-1, 1[ et 
+1 et -1 racines de multiplicité n-k\\
+Pour n = 0 \\
+Soit \(k \in [|0, n-1|]\) on suppose que \dots\\
+Soient \(-1 (=\alpha_0) < \alpha_1 <\dots<\alpha_{k}<1(=\alpha_{k+1})\) les racines de \(((X^2-1)^n)^{(k)}\)\\
+Pour tout \(m \in [|0,k|]\), on suppose le théorème de Rolle sur \([\alpha_m, \alpha_{m+1}]\)\\
+Donc il existe \(\beta_{m+1}\in ]\alpha_m, \alpha_{m+1}[\) racine de \(((X^2-1)^n)^{(k+1)}\)\\
+Donc \(((X^2-1)^n)^{(k+1)}\) possède k+1 racines simples dans \(]-1, 1[\)\\
+Par hypothèse de récurrence, -1 et 1 sont racines de multiplicité n-k de \(((X^2-1)^n)^{(k)}\)
+sont racines de multiplicité n-k-1 de \(((X^2-1)^n)^{(k+1)}\)\\
+
+\noindent \colorbox{green}{630.11}\\
+\begin{equation*}
+    \exists P_n \indent \frac{d^n}{dx^n}arctan x = \frac{P_n(x)}{(1+x^2)^n}
+\end{equation*}
+\(P_1 = 1\) ok\\
+Soit n \(\in \mathbb{N}\) fixé \\
+Supposons \(\exists P_n, deg P_n = n-1\) scindé à racines simples 
+dans \(\mathbb{R}\) tel que \\
+\begin{align*}
+    \frac{d^n}{dx^n}arctan x &= \frac{P_n(x)}{(1+x^2)^n}\\
+    \frac{d^{n+1}}{dx^{n+1}}arctan x &= \frac{P_n'(x)}{(1+x^2)^n} + P_n - 2x(-n)(x^2 + 1)^{-n-1}\\
+    &= \frac{(x^2 + 1)P'_n - 2nxP_n}{(x^2+1)^{n+1}}\\
+    \text{ On définit } P_{n+1} &= (x^2 + 1)P'_n - 2nxP_n\\
+    &= \frac{P_{n+1}(x)}{(1+x^2)^{n+1}} \indent \text{ où } degP_{n+1} \leq n
+\end{align*}
+\(\frac{P_n(x)}{(1+x^2)^n}\) admet n-1 racines distinctes par H.R. notées \(\alpha_1<...<\alpha_{n-1}\)
+et \begin{align*}
+    \frac{P_n(x)}{(1+x^2)^n} \rightarrow_{x \to +\infty} 0\\
+    \frac{P_n(x)}{(1+x^2)^n} \rightarrow_{x \to -\infty} 0 
+\end{align*}
+Par le théorème de Rolle ou Rolle généralisé \(\frac{d^{n+1}}{dx^{n+1}}arctan x\)
+admet n racines simples dans \(\mathbb{R}\), donc \(P_{n+1}\) est un polynôme scindé
+à racines simples dans \(\mathbb{R}\)\\
+Donc \(P(n) \Rightarrow P(n+1)\)\\
+\colorbox{lemon}{Méthode 2} \begin{align*}
+    \frac{d^{n}}{dx^{n}}arctan x &= (\frac{1}{1+X^2})^{(n-1)}\\
+    &= -\frac{1}{2i}(\frac{1}{X+i} - \frac{1}{(X-i)})^{(n-1)}\\
+    &= -\frac{1}{2i} ((X+i)^{-1})^{(n-1)} - ((X-i)^{-1})^{(n-1)}\\
+    &= -\frac{1}{2i}(-1)^{n-1}(n-1)!(\frac{1}{(X+i)^n}-\frac{1}{(X-i)^n})\\
+    &= \frac{1}{2i}(-1)^n(n-1)!\frac{(X-i)^n-(X+i)^n}{((X+i)(X-i))^n}\\
+    &= \frac{1}{2i}(-1)^{n+1}(n-1)!(\frac{(X+i)^n-(X-i)^n}{((X^2+1))^n})\\
+    &= \frac{1}{2i}(-1)^{n+1}(n-1)!\frac{2iIm((X+i)^n)}{(X^2+1)^n}
+\end{align*}
+\(Im((X+i)^n)\) est polynôme de degré au plus n-1
+\begin{align*}
+    (X+i)^n - (X-i)^n &= \sum_{k=0}^{n}\binom{n}{k}X^ki^{n-k} - \sum_{k=0}^{n}\binom{n}{k}X^k(-i)^{n-k}\\
+    &= 0X^n + 2iX^{n-1} + ... \\
+    Q(x) = 0 &\Leftrightarrow (x+i)^n - (x-i)^n = 0\\
+    &\Leftrightarrow (x+i)^n = (x-i)^n \indent \text{ x = i n'est pas solution}\\
+    &\Leftrightarrow (\frac{(x+i)}{x-i})^n = 1\\
+    &\Leftrightarrow \frac{x+i}{x-i} \in \mathbb{U}_n\\
+    &\Leftrightarrow \exists k \in \{0,...,n-1\} \text{ tq}\\
+    &\frac{x+i}{x-i} = e^{i\frac{2k\pi}{n}}\\
+    &\Leftrightarrow \exists k \text{ tq } x(1-e^{i\frac{2k\pi}{n}}) = i(-1-e^{i\frac{2k\pi}{n}})\\
+    &\Leftrightarrow \exists k \text{ tq } x2isin\frac{k\pi}{n}(-) = i(-)2cos\frac{k\pi}{n}\\
+    &\Leftrightarrow \exists k \in \{1,...,n-1\} \text{ tq } x = cotan\frac{k\pi}{n}
+\end{align*}
+
+
+
+
+
+\end{document}

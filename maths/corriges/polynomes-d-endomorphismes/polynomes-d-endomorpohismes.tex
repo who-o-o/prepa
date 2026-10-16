@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}    
+\usepackage{amssymb}          
+\usepackage{multicol}  
+\usepackage{esint}
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document} \noindent
+\colorbox{green}{250.2}\\
+\(\lambda\) valeur propre de u \(\Rightarrow P(\lambda)\) valeur propre de P(u)\\
+
+\noindent \colorbox{green}{250.8}\\
+\begin{align*}
+    M \text{ inversible } &\Leftrightarrow 0 \notin Sp(M)\\
+    &\Leftrightarrow 0 \text{ n'est pas racine de } \Pi_M\\
+    &\Leftrightarrow \Pi_m(0) \neq 0
+\end{align*}
+
+\noindent \colorbox{green}{250.9}\\
+A/ \(SpA = \{2,3\}\)\\ 
+donc \((X-2)(X-3)|\Pi_A\) et \(\chi_A(A) = 0\)\\
+Donc \(\Pi_A = (X-2)(X-3)\)\\
+div euclidienne de \(X^n\) par \(\Pi_A\)\begin{align*}
+    X^n &= Q(X-2)(X-3) + \alpha_n X + \beta_n \\
+    &\begin{cases}
+        2^n = 2\alpha_n + \beta_n\\
+        3^n = 3\alpha_n + \beta_n
+    \end{cases}\\
+    A^n &= Q(A)\Pi_A(A) + \alpha_n A + \beta_n I_2\\
+    &= \alpha_n A + \beta I_2
+\end{align*}
+B/ \(\chi_B = (X-2)^2\) 
+\(B-2I_2 \neq 0\) donc \(\Pi_b = (X-2)^2\)\begin{align*}
+    X^n = Q(X-2)^2 + \alpha_n X + \beta_n \\
+    nX^{n-1} = (X-2)qqch + \alpha_n
+\end{align*}
+
+
+
+\end{document}

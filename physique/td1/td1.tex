@@ -1,0 +1,177 @@
+\documentclass[a4paper,twocolumn,landscape]{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+\begin{document}
+
+\noindent
+\colorbox{green}{Exercice 2 :} \\
+
+\noindent
+a/ \begin{math}
+    \frac{1}{1+j(\frac{\omega}{R}L) - \frac{1}{R\omega C}} = \frac{H_0}{1 + jQ(\frac{\omega}{\omega_0} - \frac{\omega_0}{\omega})}\\
+    H_0 = 1\\
+    \begin{cases}
+        \frac{L}{R} = \frac{Q}{\omega_0}.1\\
+        \frac{1}{RC} = \omega_0  Q . 2\\
+    \end{cases}
+    \begin{cases}
+        \frac{2}{1} \to \frac{1}{LC} = \omega_0^2\\
+        \Rightarrow \omega_0 = \frac{1}{\sqrt{LC}}\\
+        Q = \frac{1}{R}\sqrt{\frac{L}{C}}
+    \end{cases}\\
+    \omega_0 = 5000rad.s^{-1}\\
+    Q = 100 \\
+    \omega_0 = 3\omega
+\end{math}
+
+\noindent b/ 
+\begin{equation*}
+    U_s(t) = -\frac{8A}{\pi^2} \sum_{k=0}^{+\infty} \frac{|H(j(2k+1)\omega)|}{(2k+1)^2}cos((2k+1)\omega t + arg(\underline{H}(j(2k+1))\omega))
+\end{equation*}
+
+\noindent
+c/ \begin{align*}
+    A_k &= -\frac{8A}{\pi^2(2k+1)^2} \times \frac{1}{\sqrt{1+Q^2((2k+1)\frac{\omega}{\omega_0}-\frac{\omega_0}{(2k+1)\omega})}}\\
+    \varphi_k &= -arctan(Q(\frac{(2k+1)\omega}{\omega_0} - \frac{\omega_0}{(2k+1)\omega}))
+\end{align*}
+
+\noindent
+d/ \begin{eqnarray*}
+    A_0 \simeq 0,03 V\\
+    A_1 \simeq  0.90V\\
+    A_2 \simeq  0.0V\\
+    \varphi_0 \simeq  -1.58 rad\\
+    \varphi_1 \simeq  rad\\
+    \varphi_2 \simeq  1.58 rad
+\end{eqnarray*}
+\noindent
+e/ \(u_s \simeq 0.90cos(3\omega t)\)\\
+
+\noindent
+\colorbox{green}{Exercice 3}\\
+La réponse à un signal continu est un signal continu.\\
+Pas de discontinuité lors de la discontinuité de l'entrée\\
+Donc passe-bas. \\
+\begin{equation*}
+    H(\omega) = \frac{H_0}{1+\frac{j}{Q}\frac{\omega}{\omega_0}-\frac{\omega_0^2}{\omega^2}}
+\end{equation*} 
+
+\begin{align*}
+    H_0 &= 2\\
+    Q &\simeq 5 \\
+    u_p &= \omega\sqrt{1-\frac{1}{2Q^2}}\\
+    &\simeq \omega_0 
+\end{align*}
+
+\begin{align*}
+    \underline{s} (1 + \frac{j\omega}{Q\omega_0} + \frac{(j\omega)^2}{\omega_0^2}) &= H_0 \underline{e}\\
+    s(t) + \frac{1}{Q\omega_0}\frac{ds}{dt} + \frac{1}{\omega_0^2}\frac{d^2s}{dt^2} &= H_0e(t) (= 1, t > 0)\\
+    \frac{d^2s}{dt^2} + \frac{\omega_0}{Q}\frac{ds}{dt} + \omega_0^2 s(t) &= \omega_0^2H_0\\
+    \Delta = \frac{\omega_0^2}{Q^2} - 4\omega_0^2<0\\
+    r_{1,2} = -\frac{\omega_0}{2Q} \pm j\omega_0 \sqrt{1-\frac{1}{4Q^2}}\\
+    s(t) = ae^{r_1t} + be^{r_2 t}\\
+    s(t) = e^{-\frac{\omega_0}{2Q}t}(ae^{j\omega_pt} + be^{-j\omega_pt}) + H_0 - Acos(\omega_p t + \varphi)
+\end{align*}
+\begin{equation*}
+    s'(t) = H_0 + Ae^{-\frac{\omega_0}{2Q}t} cos(\omega_p t + \varphi)
+\end{equation*}
+\(t_1\) : premier max de s(t)\\
+\(t_2\) : 2e --\\
+\begin{align*}
+    s(t_1) = 2 + Ae^{-\frac{\omega_0}{2Q}t_1} = 3.5\\
+    s(t_2) =2 + Ae^{-\frac{\omega_0}{2Q}(t_1 + T_0)} = 2.8
+\end{align*}
+\begin{math}
+    \begin{cases}
+        Ae^{-\frac{\omega_0}{2Q}t_1} = 1.5\\
+        Ae^{-\frac{\omega_0}{2Q}(t_1+T_0)} = 0.8
+    \end{cases}\\
+    \frac{1.5}{0.8} = e^{\frac{\omega_0 T_0}{2Q}} = e^{\frac{\pi}{Q}}\\
+    \frac{\pi}{Q} = ln(\frac{1.5}{0.8})\\
+    Q = 5
+\end{math}
+
+\noindent \colorbox{green}{Exercice 4}\\
+a/
+\begin{align*}
+    e &= u_R + u_C\\
+    &= R(i_C + i_R) + u_C\\
+    &= RC \frac{du_C}{dt} + u_c + u_c\\
+    &= \frac{du}{dt} + \frac{2}{RC}u = \pm \frac{E}{RC}
+\end{align*}
+
+c/ \begin{align*}
+    j\omega \underline{U} + \frac{2\underline{u}}{RC} = \frac{\underline{e}}{RC}\\
+    \frac{\underline{u}}{\underline{e}} = \frac{1}{RC(j\omega + \frac{2}{RC})} \\
+    \underline{H}(\omega) = \frac{1}{jRC\omega + 2}\\
+    \underline{H} = \frac{\frac{1}{2}}{1 + j\frac{RC\omega}{2}}\\
+    = \frac{H_0}{1 + j\frac{\omega}{\omega_c}} \begin{cases}
+        H_0 = \frac{1}{2}\\
+        \omega_c = \frac{2}{RC} = 2 \omega_0
+    \end{cases}
+\end{align*}
+\begin{itemize}
+    \item \(\omega <<< \omega_c\) \begin{math}
+        \begin{cases}
+            G_{dB} = 20log(\frac{1}{2})\\
+            = -6\\
+            \varphi = 0
+        \end{cases}
+    \end{math}
+    \item \(\omega >> \omega_c\)\begin{align*}
+        G_{dB} = 20log(\frac{H_0\omega_c}{\omega})\\
+        &= -6 + 20log(\frac{\omega_c}{\omega})\\
+        \varphi = -\frac{\pi}{2}
+    \end{align*}
+\end{itemize}
+
+\noindent
+\colorbox{green}{Exercice 5}\\
+1/ \begin{eqnarray*}
+    A_0 = \alpha E \\
+    E_{eff} = \sqrt{\alpha} E
+\end{eqnarray*}
+2/ \begin{align*}
+    A_1 &= \frac{|sin\alpha\pi|}{\pi} 2 E\\
+    &= 0.0100.2E\\
+    A_{17} &= \frac{|sin17\alpha\pi|}{17\pi} 2E\\
+    &= 0.00953\times 2E\\
+    \frac{A_1-A_{17}}{A_1} &= \frac{0.00047}{0.01000} = 0.047
+\end{align*}
+3/ On observe le gain du filtre en fonction de f\\
+
+\colorbox{green}{Exercice 6}\\
+\begin{equation*}
+    \underline{H}(j\omega) = \frac{H_0}{1+jQ(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})}
+\end{equation*}
+\(H_0 = 1\\
+f_0 = 1000Hz\)\\
+Pour \(\omega >> \omega_0\) \begin{eqnarray*}
+    \underline{H}(j\omega) \approx \frac{H_0}{jQ\frac{\omega}{\omega_0}}\\
+    G = \frac{1}{Q\frac{\omega}{\omega_0}}\\
+    G_{dB} = -20 log(Q\frac{\omega}{\omega_0})\\
+    -20 = -20logQ\\
+    Q = 10\\
+    Q = \frac{1}{R}\sqrt{\frac{L}{C}}
+\end{eqnarray*}
+
+
+
+
+\end{document}

@@ -1,0 +1,235 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}    
+\usepackage{amssymb}          
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+
+\begin{document}
+\noindent \colorbox{green}{540.2}\\
+\begin{equation*}
+    \eta(x) = \sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n^x}
+\end{equation*}
+a/ On note \(f_n(x) = \frac{(-1)^{n-1}}{n^x}\)
+* si \(x \leq 0\) divergence grossière\\
+* si \(x > 0\) \(\frac{1}{n^x}\) termes positives, décroissante et tend vers 0, CSSA \(\sum f_n\) converge
+c/ Mq \(\eta\) continue sur D\\
+Pour \(x \in [a,+\infty[ \subset] 0 ; +\infty [\)\\
+* \begin{align*}
+    |R_n(x)| &\leq \frac{1}{(n+1)^x}\\
+    &\leq \frac{1}{(n+1)^a}\\
+    &\rightarrow 0
+\end{align*}
+Donc \(\sum f_n\) cv uniformément sur tout \([a, +\infty[\). De 
+plus, les \(f_n\) sont continues\\
+Donc \(\eta\) est continue sur tout \([a, +\infty[\subset] 0 ; +\infty[\)
+donc sur \(]0, +\infty[\)\\
+b/ Mq \((f_n)_n\) ne converge pas uniformément vers \(x \to 0\)\\
+Posons \(x_n = \frac{1}{lnn}\)\begin{align*}
+    |f_n(x_n)| &= \frac{1}{n^{x_n}}\\
+    &= e^{-x_n ln(n)}\\
+    &= e^{-1}\\
+    &\nrightarrow 0
+\end{align*}
+\(\sum f_n\) ne converge pas uniformément vers 0\\
+d/ On veut montrer \(\eta(x) = (1-2^{1-x})\zeta(x)\)\\
+Pour \(x > 1\)\begin{align*}
+    \eta(x) &= \sum_{n=1}^{+\infty} \frac{(-1)^{n-1}}{n^x}\\
+    &= \sum_{n=1, \text{ n pair}}^{+\infty} \frac{(-1)^{n-1}}{n^x} + \sum_{n=1, \text{ n impair}}^{+\infty} \frac{(-1)^{n-1}}{n^x} \indent \text{ par paquet}\\
+    &= \sum_{p=1}^{+\infty} \frac{-1}{(2p)^x} + \sum_{p=0}^{+\infty} \frac{1}{(2p+1)^x}\\
+    &= \sum_{n=1}^{+\infty} \frac{1}{n^x} - 2\sum_{p=1}^{+\infty} \frac{1}{(2p)^x}\\
+    &= \zeta(x) - 2\times \frac{1}{2^x}\sum_{p=1}^{+\infty} \frac{1}{p^x}\\
+    &= \zeta(x)(1-2^{1-x}) 
+\end{align*}
+
+\noindent \colorbox{green}{540.1}
+\begin{align*}
+    v_n(x) = (-1)^n ln(1+\frac{x}{n(1+x)})
+\end{align*}
+\(v_n(x)\) est positive, décroissante, de limite nulle \\
+Donc \(\sum v_n\) converge simplement\\
+* \begin{align*}
+    |R_{n-1}(x)| &\leq ln(1+\frac{x}{n(1+x)})\\
+    &\leq \frac{x}{n(1+x)}\\
+    &\leq \frac{1}{n} \indent \text{ indépendant de x}\\
+    &\rightarrow 0
+\end{align*}
+c/ \begin{align*}
+    u_n(1) &= ln(1+\frac{1}{2n})\\
+    &\sim \frac{1}{2n}
+\end{align*}
+donc divergence
+
+\noindent \colorbox{green}{540.4}\\
+a \begin{align*}
+    f(x) &= \sum_{n=1}^{+\infty}\frac{1}{n(n+x)}\\
+    f_n(x) &= \frac{1}{n(n+x)}
+\end{align*}
+Soit \(x>-1\)\begin{equation*}
+    f_n(x) \sim \frac{1}{n^2}   
+\end{equation*}
+Donc \(\sum f_n\) converge simplement\\
+Donc f est bien définie sur \(]-1, +\infty[\)\\
+b/ Pour \(x \in [0, +\infty[\)\begin{align*}
+    |f_n(x)| &= |\frac{1}{n(n+x)}|\\
+    &\leq \frac{1}{n^2} \indent \text{indépendant de x terme général d'une série convergente}
+\end{align*}
+Donc \(\sum f_n\) converge normalement sur \([0, +\infty[\) donc \underline{uniforme}\\
+\begin{equation*}
+    f_n(x) = \frac{1}{n(n+x)} \rightarrow_{x\to +\infty} 0 \indent \text{ fini}
+\end{equation*}
+Par double limite \begin{align*}
+    \Aboxed{f(x) \rightarrow_{x\to +\infty} \sum_{n=1}^{+\infty} 0 = 0}
+\end{align*}
+\begin{align*}
+    f(x) &= \frac{1}{x}\sum_{n=1}^{+\infty}\frac{1}{n(1+\frac{n}{x})}\\
+    t &\mapsto \frac{1}{t(t+x)} \indent \text{ décroissante}\\
+    \int_{n}^{n+1} \frac{1}{t(t+x)} &\leq \frac{1}{n(n+x)} \leq \int_{n-1}^{n} \frac{1}{t(t+x)} dt\\
+    \int_{1}^{N+1} \frac{1}{t(t+x)} dt &\leq \sum_{n=1}^{N} \frac{1}{n(n+x)} \leq \int_{1}^{N} \frac{1}{t(t+x)} dt + \frac{1}{x}\\
+    \int_{1}^{b} \frac{1}{t(t-x)} dt &= \int_{1}^{b} \frac{1}{x}(\frac{1}{t}-\frac{1}{t+x}) dt \\
+    &= \frac{1}{x}lnb - \frac{1}{x} ln(b+x) + \frac{1}{x} ln(1+x)\\
+    &= \frac{1}{x}ln(\frac{b}{b+x}) + \frac{1}{x}ln(1+x)\\
+    &\text{ par passage à la limite}\\
+    \frac{1}{x}ln(1+x) &\leq f(x) \leq \frac{1}{x}ln(1+x) + \frac{1}{1+x}
+\end{align*}
+Pour x au voisinnage de \(+\infty\)\begin{align*}
+    \frac{1}{x}ln(1+x) &\sim \frac{1}{x}lnx\\
+    \frac{1}{x}ln(1+x) + \frac{1}{x+1} &\sim \frac{1}{x} lnx
+\end{align*}
+Donc \fbox{\(f(x) \sim_{x\to +\infty} \frac{lnx}{x}\)} par encadrement\\
+\begin{align*}
+    f(x) = \frac{1}{1+x} + \sum_{n=1}^{+\infty} \frac{1}{n(n+x)}
+\end{align*}
+Pour \(x \in ]-1, +\infty[\)\\
+On a \begin{align*}
+    |f_n(x)| \leq \frac{1}{n(n-1)} \indent \text{tg d'une série convergente}
+\end{align*}
+Donc \(\sum_{n\geq2}^{} f_n\) cv uniformément sur \(]-1,\infty[\)\\
+\begin{equation*}
+    f_n(x) = \frac{1}{n(n+x)} \rightarrow_{x \to -1} \frac{1}{n(n-1)}
+\end{equation*}
+Par double limite \begin{align*}
+    g(x) &\rightarrow_{x\to -1 } \sum_{n=2}^{+\infty}\frac{1}{n(n-1)}\\
+    f(x) &\rightarrow_{x \to -1} +\infty\\
+    \text{ car } \indent \frac{1}{x-1} &\rightarrow_{x \to -1} +\infty\\
+    f(x) &=_{x\to -1} \frac{1}{x+1} + 1 + o(1)
+\end{align*}
+
+\noindent \colorbox{green}{540.3}\\
+\begin{equation*}
+    f(x) = \sum_{n=0}^{+\infty} (-1)^n \frac{e^{-nx}}{n+1}
+\end{equation*}
+a/ \underline{Cas n1 : \(x \geq 0\)}\\
+\((\frac{e^{-nx}}{n+1})\) positive, décroissante et de limite nulle\\
+TSA : \(\sum (-1)^n \frac{e^{-nx}}{n+1}\) converge \\
+\underline{Cas n2 \(x < 0\)} \begin{equation*}
+    |f_n(x)| \rightarrow_{n \to +\infty} +\infty
+\end{equation*}
+\(\sum f_n(x)\) diverge grossièrement\\
+Donc \(D = [0, +\infty[\)
+\underline{Cas n0} \(x>0, |f_n(x)| \leq e^{-nx}\)
+b/ \begin{align*}
+    |R_{n-1}(x)| &= |\sum_{k=n}^{+\infty} (-1)^n \frac{e^{-nx}}{n+1}|\\
+    &\leq \frac{e^{-nx}}{n+1}\\
+    &\leq \frac{1}{n+1} \indent \text{ indépendant de x}\\
+    &\rightarrow_{x \to +\infty} 0
+\end{align*}
+Donc \(\sum f_n\) converge uniformément et les \(f_n\) sont continues.\\
+Donc f continue sur \([0, +\infty[\)\\
+c/ \begin{itemize}
+    \item \(\sum f_n\) converge simplement\\
+    \item les \(f_n\) sont \(\mathcal{C}^1\) sur \(]0; +\infty[\) et \(f_n'(x) = (-1)^{n+1}\frac{ne^{-nx}}{n+1}\)\\
+    \item Pour \(x \in [a, +\infty[\subset]0, +\infty[\)\begin{align*}
+        |f_n'(x)| &= \frac{ne^{-nx}}{n+1}\\
+        &\leq e^{-na} \indent \text{ indépendant de x, tg d'une série géométrique convergente}
+    \end{align*}
+    Donc \(\sum f'_n\) converge normalement donc uniformément sur \([a, +\infty[\)
+\end{itemize}
+Donc f est \(\mathcal{}C^1\) sur tout \([a, +\infty[\subset]0, +\infty[\)
+donc sur \(]0, +\infty[\)\\
+et \begin{align*}
+    f'(x) &= \sum_{n=0}^{+\infty} f_n'(x) \indent \forall x > 0\\
+    &= \sum_{n=0}^{+\infty} (-1)^{n+1} e^{-nx} \frac{n}{n+1}\\
+    f'(x) - f(x) &= \sum_{n=0}^{+\infty}(-1)^{n+1}e^{-nx}\\
+    &= -1 \frac{1}{1+e^{-x}} \text{ car } e^{-x} < 1
+\end{align*}
+f solution de \(y'-y = \frac{-1}{1+e^{-x}}\) sur \(]0, +\infty[\)\\
+\begin{align*}
+    f'(x) = f(x) - \frac{1}{1+e^{-x}}
+    \rightarrow f(0) - \frac{1}{2} \text{ par continuité de f en 0}
+\end{align*}
+Or f est continue en 0 donc par limite de la dérivée
+f dérivable en 0 et \(f'(0) = f(0) - \frac{1}{2}\)
+et f est \(C^1\) sur \(R+\)
+
+\noindent
+\colorbox{green}{540.28}\\
+\begin{equation*}
+    u_n(x) = \frac{(-1)^{n-1}}{n} \frac{x^n}{1+x^n}
+\end{equation*}
+a/ * Pour \(|x| < 1\) \begin{align*}
+    \big| u_n(x)\big| &= \big|\frac{(-1)^{n-1}}{n}\frac{x^n}{1+x^n}\big|\\
+    &= \frac{1}{n}\frac{|x|^n}{1+x^n}\\
+    &\sim \frac{|x|^n}{n}\\
+    &= |x|^n o(1)\\
+    &= o(|x|^n)
+\end{align*}
+Or \(\sum |x^n|\) série géométrique convergente \\
+Donc \(\sum u_n(x)\) converge absolument \\
+* Pour x = 1 \begin{equation*}
+    u_n(1) = \frac{(-1)^{n-1}}{n}\frac{1}{2}
+\end{equation*}
+Donc \(\sum u_n(1)\) converge\\
+* Pour \(|x| > 1\) \begin{align*}
+    u_n(x) &= \frac{(-1)^{n-1}}{n} \frac{1}{1+\frac{1}{x^n}}\\
+    &= \frac{(-1)^{n-1}}{n}(1-\frac{1}{x^n} + o(\frac{1}{x^n}))\\
+    &= \frac{(-1)^{n-1}}{n}+\frac{(-1)^n}{nx^n} + o(\frac{1}{nx^n})
+\end{align*}
+\( o(\frac{1}{nx^n}) = v_n\)
+avec \(\sum \frac{(-1)^{n-1}}{n}\) cv \\
+\(\sum \frac{(-1)^{n}}{nx^n}\) cv absolue car \(\frac{(-1)^n}{nx^n} = o(\frac{1}{x^n})\) cv absolue 
+\(\sum v_n\) cv absolument
+\begin{equation*}
+    D = \mathbb{R}/\{-1\}
+\end{equation*}
+b/ \begin{align*}
+    u_n(x) &= \frac{(-1)^{n-1}}{n}(1-\frac{1}{1+x^n})\\
+    &= \frac{(-1)^{n-1}}{n} - (-1)^{n-1} \frac{\frac{1}{x^n}}{1+\frac{1}{x^n}}\\
+    &= \frac{(-1)^{n-1}}{n} - u_n(\frac{1}{x})\\
+    &\Leftrightarrow f(x) = \sum_{n=1}^{+\infty} \frac{(-1)^{n-1}}{n} - f(\frac{1}{x})
+\end{align*}
+c/ Soit a \(\in [0,1[, x \in [-a, a]\)\begin{align*}
+    |u_n(x)| &= \frac{1}{n}\times \frac{|x|^n}{1+|x|^n}\\
+    &\leq \frac{1}{n}\frac{a^n}{1-a} \\
+    &\leq \frac{1}{n-a}a^n \indent \text{tg d'une série géométrique convergente}
+\end{align*}
+Donc \(\sum u_n(x)\) cv normalement sur [-a,a]\\
+* Les \(u_n\) sont continus sur [-a,a]\\
+* \(\sum u_n\) cv uniformément sur [-a,a]\\
+Donc par transfert de continuité\\
+f continue sur tout \([-a,a]\subset ]-1, 1[\) donc f continue sur \(]-1, 1[\)\\
+Pour \(x \in ]-\infty, -1[\cup]1, +\infty[\)\begin{align*}
+    &f(x) = \sum_{n=1}^{+\infty} \frac{(-1)^{n-1}}{n} - f(\frac{1}{x})\\
+    &\sum_{n=1}^{+\infty} \frac{(-1)^{n-1}}{n} \indent \text{ constant}\\
+    &f(\frac{1}{x}) \indent \text{ continue car f continue sur} ]-1, 1[
+\end{align*}
+d/ Nécessite 
+
+
+\end{document}

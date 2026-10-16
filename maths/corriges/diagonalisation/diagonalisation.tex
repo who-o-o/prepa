@@ -1,0 +1,322 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}    
+\usepackage{amssymb}          
+\usepackage{multicol}  
+\usepackage{esint}
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+\noindent \colorbox{green}{240.1}\\
+\begin{align*}
+    J &= \begin{pmatrix}
+        1 & ... & 1 \\
+        \vdots & & \vdots \\
+        1 & ... & 1 
+    \end{pmatrix} \in \mathcal{M}_n(\mathbb{R})\\
+    \chi_J &= \begin{vmatrix}
+        X-1 & -1 & ... & -1 \\
+        -1 & X-1 & ... & \vdots \\ 
+        \vdots & & \ddots & \vdots \\
+        -1 & ... & ... & -1
+    \end{vmatrix}\\
+    &= \begin{vmatrix}
+        X-n & -1 & ... & -1 \\
+        X-n & X-1 & ... & \vdots\\
+        \vdots & & \ddots & \vdots \\
+        X-n & -1 & ... & X-1
+    \end{vmatrix} C_1 \leftarrow C_1 + C_2 + ... + C_n \\
+    &= (X-n) \begin{vmatrix}
+        1 & -1 & ... & -1 \\
+        \vdots & X-1 & & \vdots \\
+        \vdots & -1 & \ddots & \vdots \\
+        1 & -1 & ... & X-1
+    \end{vmatrix}\\
+    &= (X-n) \begin{vmatrix}
+        1 & 0 & ... & 0 \\
+        \vdots & X & & \vdots \\
+        \vdots &  & \ddots & \vdots \\
+        1 & ... & ... & X
+    \end{vmatrix}\\
+    &= (X-n)X^{n-1} \text{ car matrice triangulaire}\\
+    Sp(J) &= \{0, n\}\\
+    X = \begin{pmatrix}
+        x_1\\\vdots\\x_n
+    \end{pmatrix} \in E_0(J) &\Leftrightarrow JX = 0 \\
+    &\Leftrightarrow \begin{cases}
+        x_1 + ... + x_n = 0\\
+        x_1 ... x_n = 0
+    \end{cases}\\
+    &\Leftrightarrow x_1 +...+x_n = 0\\
+    &\Leftrightarrow x_n = -x_1 -...-x_{n-1}\\
+    &\Leftrightarrow X = \begin{pmatrix}
+        x_1\\\vdots\\-x_1-...-x_{n-1}
+    \end{pmatrix} = x_1 \begin{pmatrix}
+        1\\0\\\vdots\\0\\-1
+    \end{pmatrix} +...+x_{n-1}\begin{pmatrix}
+        0\\\vdots\\0\\1\\-1
+    \end{pmatrix}
+    \Leftrightarrow X \in Vect(U_1,...,U_{n-1})
+\end{align*}
+Donc \(E_0 (J) = Vect(U_1,...,U_{n-1})\)\\
+\(E_0(J) = Ker(J-0I_n)\)\\
+
+\noindent \colorbox{green}{240.3}\\
+\begin{equation*}
+    A = \begin{pmatrix}
+        1&0\\0&2
+    \end{pmatrix} \indent
+    M = \begin{pmatrix}
+        a&b\\c&d
+    \end{pmatrix}
+\end{equation*}
+a/ \begin{align*}
+    AM = \begin{pmatrix}
+        a&b\\2c&2d
+    \end{pmatrix} &\indent MA = \begin{pmatrix}
+        a&2b\\c&2d
+    \end{pmatrix}\\
+    AM - MA &= \begin{pmatrix}
+        a&-b\\c&0
+    \end{pmatrix}
+\end{align*}
+b/ \begin{align*}
+    \varphi: &\mathcal{M}_2(\mathbb{R}) \to \mathbb{M}_2(\mathbb{R})\\
+    &M \mapsto AM - MA
+\end{align*}
+M2 \begin{align*}
+    &M2 : AM - MA = \lambda M\\
+    &\Leftrightarrow \begin{pmatrix}
+        a&-b\\c&0
+    \end{pmatrix} = \lambda \begin{pmatrix}
+        a & b \\ c & d
+    \end{pmatrix}\\
+    &\Leftrightarrow \begin{cases}
+        \lambda a = 0 \\ \lambda b = -b \\ \lambda c = c \\ \lambda d = 0
+    \end{cases}
+\end{align*}
+1er cas \(\Leftrightarrow \lambda = 0\) \(
+\begin{cases}
+    b = 0 \\
+    c = 0
+\end{cases}\)\\
+Donc \(E_0(\varphi) = \{\begin{pmatrix}
+a & 0 \\ 0 & d
+\end{pmatrix} | a,d \in \mathbb{R}\}\)\\
+Si \(\lambda = 1\) a = b = d = 0 \\
+\(E_1(\varphi) = \{\begin{pmatrix}
+    0 & 0 \\ c & 0
+\end{pmatrix} | c \in \mathbb{R}\}\)\\
+Si \(\lambda = -1\) \\
+\(E_{-1}(\varphi) = \{\begin{pmatrix}
+    0 & b \\ 0 & 0
+\end{pmatrix} | b \in \mathbb{R}\}\)\\
+
+\noindent \colorbox{green}{240.2}\\
+\begin{align*}
+    \chi_c &= \begin{vmatrix}
+        X & 0 & \dots & 0 & a_1\\
+        -1 & X &  &   & \vdots\\
+        0 & -1 & \ddots &  & \vdots\\
+        \vdots & & \ddots & X & \vdots \\
+        0 & \dots & 0 & -1 & -a_{n-1}
+    \end{vmatrix} L_1 \leftarrow L_1 + XL_2 + X^2 L_3 + ... _ X^{n-1}L_n\\
+    &= \begin{vmatrix}
+        0 & ... & ...&... & 0 & P \\
+        -1 & X & & & & a_1\\
+        0 & -1 & X & & & \vdots\\
+        & & \ddots & \ddots & & \vdots\\
+        & & &\ddots  &  X & a_{n-2}\\
+        0& & & 0& -1 & X + a_{n-1}
+    \end{vmatrix}\\
+    P &= a_0 + Xa_1 + X^2 a_2 + ... + X^{n-1}(X+a_{n-1})\\
+    &\text{dev } L_1 = (-1)^{n+1}P(-1)^{n-1} = P
+\end{align*}\\
+b/ \begin{align*}
+    V = V(\lambda_1,...,\lambda_n) &= \begin{pmatrix}
+        1 & ... & 1\\
+        \lambda_1 & ... & \lambda_n\\
+        \vdots & & \vdots \\
+        \lambda_1^{n-1}&...&\lambda_n^{n-1}
+    \end{pmatrix}\\
+    det(V(\lambda_1,...,\lambda_n)) &= \prod_{1 \leq i < j \leq n}^{}(\lambda_j - \lambda_i) \neq 0
+\end{align*}
+Donc \(V^{-1}\) existe\\
+B = \(C_1...C_n\) avec \(V=(C_1|...|C_n)\)\\
+V = Pass(\(\mathcal{C}\to B\))\begin{align*}
+    u(C_k) = C^T C_k \\
+    &= \begin{pmatrix}
+        0 & 1 & & \\
+        & \ddots & \ddots & & \\
+        & & 0 & 1 \\
+        -a_0&... & ...&-a_{n-1}
+    \end{pmatrix}\begin{pmatrix}
+        1 \\ \vdots \\ \vdots \\ \lambda_k^{n-1}
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        \lambda_k \\
+        \lambda^2_k \\
+        \vdots \\
+        \lambda_k^{n-1}\\
+        -a_0 - a_1\lambda_k - a_2\lambda_k^2-...-a_{n-1}\lambda_k^{n-1}
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        \lambda_k \\
+        \lambda^2_k \\
+        \vdots \\
+        \lambda_k^{n-1}\\
+        -P(\lambda_k) + \lambda_k^n
+    \end{pmatrix}\\
+    &= \lambda_k \begin{pmatrix}
+        1 \\ \vdots \\ \lambda_k^{n-1}
+    \end{pmatrix}
+    &= \lambda_k C_k
+\end{align*}
+donc \begin{equation*}
+    Mat(u,B) = \begin{pmatrix}
+        \lambda_1 & & & \\
+        & \ddots & & \\
+        & & & \lambda_n
+    \end{pmatrix}
+\end{equation*}
+\colorbox{green}{240.6}\\
+\begin{align*}
+    \chi_J = X^n -1
+\end{align*}
+\(\chi_J\) est scindé donc J diagonalisable\\
+b/ u canoniquement associé à J dans \(\mathcal{B}(e_0,...,e_{n-1})\)\begin{equation*}
+    u(e_j) = e_{j-1[n]}
+\end{equation*} 
+donc \(u^k(e_j) = e_{j-k[n]}\)\\
+\(J^k=\) J où les colonnes sont décalées de k places modulo n a droite \\
+\begin{align*}
+    A &= A_0 I_n + a_1 J + ... + a_{n-1}J^{n-1}\\
+    &= P(J) \text{ où } P = a_0 + a_1 X + ... + a_{n-1}J^{n-1}
+\end{align*}
+où \(J = Q D Q^{-1}\) avec \begin{align*}
+    D &= \begin{pmatrix}
+        1 & & & & \\
+        & \omega & & & \\
+        & & \omega^2 & & \\
+        & & & \ddots & \\
+        & & & & \omega^{n-1}
+    \end{pmatrix}\\
+    J&= Q \begin{pmatrix}
+       P( 1) & & & & \\
+        & P(\omega )& & & \\
+        & & P(\omega^2 )& & \\
+        & & & \ddots & \\
+        & & & & P(\omega^{n-1})
+    \end{pmatrix}Q^{-1}
+\end{align*}
+donc \begin{equation*}
+    det A = \prod_{k=0}^{n-1}(\sum_{i=0}^{n-1}a_i \omega^{ki})
+\end{equation*}
+\noindent \colorbox{green}{240.4}\\
+\begin{align*}
+    A = \begin{pmatrix}
+        6 & 0& 0\\
+        0& 2& -2\\
+        0 & 0 & 0
+    \end{pmatrix}\\
+    Sp(A) = \{0,2,6\}\\
+    u(e_1) = 6e_1 
+\end{align*}
+Donc \(e_1 \in E_6(u)\) or \(dim E_6(u)\leq m_6 \leq 1\)\\
+Donc \(E_6(u) = Vect(e_1)\)\\
+de même \(E_2(u) = Vect(e_2)\)\\
+\(u(e_2 + e_3) = 0\) et \(dimE_0(u) = 1\)\\
+Donc \(E_0(u) = Vect(e_2 + e_3)\)\\
+On pose \(D = \begin{pmatrix}
+    6 & 0&0\\0&2&0\\0&0&0
+\end{pmatrix} = Mat(u, B')\) et P = \(\begin{pmatrix}
+    1&0&0\\0&1&1\\0&0&1
+\end{pmatrix} = Pass(B \to B')\) par changement de base \fbox{\(A = PDP^{-1}\)}
+c/ (E) \(X^2+X=A\) avec \(X \in \mathcal{M}_3(\mathbb{R})\)\\
+\underline{Analyse}\\
+Soit X tq \(X^2 + X = A\) \begin{align*}
+    XA &= X(X^2 + X)\\
+    &= X^3 + X^2\\
+    &= (X^2 + X)X\\
+    &= AX
+\end{align*}
+\(X^2 + X = A\) donc \(PY^2P^{-1} + PYP^{-1} = PDP^{-1}\)\\
+donc \(Y^2 + Y = D\)
+\begin{align*}
+    &Y = \begin{pmatrix}
+        \alpha & 0 & 0\\ 0& \beta  & 0 \\ 0& 0 & \gamma
+    \end{pmatrix}\\
+    &\text{ donc } \begin{pmatrix}
+        \alpha^2 & 0 & 0\\ 0& \beta^2  & 0 \\ 0& 0 & \gamma^2
+    \end{pmatrix} + \begin{pmatrix}
+        \alpha & 0 & 0\\ 0& \beta  & 0 \\ 0& 0 & \gamma
+    \end{pmatrix} = \begin{pmatrix}
+        6 & 0 & 0\\ 0& 2  & 0 \\ 0& 0 & 0
+    \end{pmatrix}\\
+    &\text{ donc } \begin{cases}
+        \alpha^2 + \alpha - 6 = 0\\
+        \beta^2 + \beta - 2 = 0\\
+        \gamma^2 + \gamma = 0
+    \end{cases} \text{ cad } \begin{cases}
+        (\alpha-2)(\alpha+3) = 0 \\
+        (\beta-1)(\beta + 2) = 0\\
+        \gamma(\gamma+1) = 0
+    \end{cases}
+\end{align*}
+\colorbox{green}{240.31}\\
+\begin{equation*}
+    A \in \mathcal{M}_n(\mathcal{K}), \exists p \in \mathbb{N}, A^p = 0_n
+\end{equation*}
+Mq \(Sp(A) \subset \{0\}\)\\
+Soit \(\lambda\) vp de A 
+\begin{align*}
+    \exists X \neq 0_{n,1}, AX &= \lambda X\\
+    A^p X &= \lambda^p X \\
+    \lambda^p X &= \begin{pmatrix}
+        0\\ \vdots \\ 0
+    \end{pmatrix} \text{ Donc } \lambda = 0\\
+    \chi_A &= X^n\\
+    \chi_A &= X^n - tr(A)X^{n-1}+...+(-1)^ndet(A)\\
+    trA &= 0
+\end{align*}
+2/ \begin{align*}
+    A &= \begin{pmatrix}
+        3 & 1 & -1\\ 1& 1& 1\\ 2& 0 & 2
+    \end{pmatrix}\\
+    tr(A-\lambda Id_3) &= trA - \lambda tr(Id_3)\\
+    &= 6 - 3\lambda\\
+\end{align*}
+nécessairement \(\lambda = 2\)\\
+Mq \(B = \begin{pmatrix}
+    1 & 1 & -1\\ 1& -1 & 1 \\ 2 & 0 & 0 
+\end{pmatrix}\) est nilpotente 
+\(B^3 = 0\)\\
+\colorbox{green}{250.7}\\
+a/ Mq \(P(A^T) = P(A)^T\)
+\begin{align*}
+    P &= \sum_{k-0}^{n}a_k X^k\\
+    P(A^T) &= \sum_{k=0}^{n}a_k(A^T)^k\\
+    P(A)^T &= (\sum_{k-0}^{n}a_k X^k)^T = \sum_{k=0}^{n}a_k (A^k)^T
+\end{align*}
+Mq : \((A^T)^k = (A^k)^T\)\\
+Relation de récurrence : \((A^T)^{k+1} = (A^T)^k A^T = (AA^k)^T\)\\
+b/ Contrexemple / vrai 
+
+
+
+\end{document}

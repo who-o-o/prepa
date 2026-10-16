@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}    
+\usepackage{amssymb}          
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+\noindent \colorbox{green}{640.2}
+\begin{align*}
+    I_{n+2} &= \int_{0}^{\frac{\pi}{2}} sint sin^{n+1}t dt \\
+    &= [-cost sin^{n+1}t]^{\frac{\pi}{2}}_0 - \int_{0}^{\frac{\pi}{2}}(-cost)(n+1)cost sin^nt dt \\
+    &= 0 + (n+1)\int_{0}^{\frac{\pi}{2}} (1-sin^2t)sin^nt dt \\
+    &= (n+1)(I_n - I_{n+2})
+\end{align*}
+donc \(I_{n+2} = \frac{n+1}{n+2}I_n\)
+\begin{align*}
+    I_{2p} = \frac{(2p)!}{(2^p p!)^2}\frac{\pi}{2} \indent \text{ hérédité}
+\end{align*}
+Au voisinage de \(p \to +\infty\)\\
+\begin{align*}
+    I_{2p} &= \frac{(2p)!}{2^{2p}(p!)^2}\frac{\pi}{2}\\
+    &\sim \frac{\sqrt{2\pi}\sqrt{2p}(2p)^{2p}e^{-2p}}{2^{2p}2\pi p p^{2p}e^{-2p}}\frac{\pi}{2}\\
+    &= \sqrt{\pi}\frac{1}{2}\frac{1}{\sqrt{p}} 1\\
+    &= \sqrt{\frac{\pi}{4p}}
+    \rightarrow_{p \to +\infty}0
+\end{align*}
+
+\noindent \colorbox{green}{640.3} \begin{align*}
+    u_n &= \sum_{k=1}^{n}\frac{1}{n^2+k^2}\\
+    &= \frac{1}{n}(\frac{1}{n}\sum_{k=1}^{n}\frac{1}{(\frac{k}{n})^2 + 1})
+\end{align*}
+On reconnaît une somme de Riemann avec la fonction \(f : x \mapsto \frac{1}{1+x^2}\)\\
+Sur le segment [0,1]:\\
+* f est continue sur [0,1]\\
+donc \begin{align*}
+    \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) &\rightarrow_{n\to +\infty} \int_{0}^{1}f(t)dt\\
+    &= Arctan 1\\
+    &= \frac{\pi}{4}
+\end{align*}
+Ainsi \begin{equation*}
+    u_n \sim_{n\to +\infty}\frac{1}{n}\frac{\pi}{4}
+\end{equation*}
+\colorbox{green}{640.5}\\
+a,b \(\in \mathbb{R}\) tq \(a < b\)\\
+h continue positive\\
+On veut montrer \begin{equation*}
+    \int_{0}^{1}h(x)dx = 0 \Rightarrow h = 0
+\end{equation*}
+Par contraposée on suppose \(h \neq 0\)\\
+\begin{equation*}
+    \exists x_0 \in [a,b], h(x_0) > 0
+\end{equation*}
+Par définition \(\varepsilon = \frac{h(x_0)}{2}\)\begin{align*}
+    &\exists \alpha > 0, x \in [x_0-\alpha, x_0 + \alpha] \Rightarrow |h(x)-h(x_0)| \leq \varepsilon\\
+    & \forall x \in [x_0-\alpha, x_0 + \alpha], h(x)>\varepsilon > 0\\
+    \int_{0}^{1} h(x)dx &= \int_{0}^{x_0-\alpha} h(x) dx + \int_{x_0-\alpha}^{x_0+\alpha} h(x) dx + \int_{x_0+\alpha}^{1} h(x)\\
+    &\geq 0 + 2\alpha \frac{h(x_0)}{2} + 0\\
+    &\geq 0
+\end{align*}
+\colorbox{green}{640.17}\\
+\begin{equation*}
+    \frac{1}{2}ln((t-a)^2+b^2) + iArctan(\frac{t-a}{b})
+\end{equation*}
+
+\noindent \colorbox{green}{640.4}\\
+\begin{equation*}
+    sin^{(k)}(x) = sin(x + k\frac{\pi}{2})
+\end{equation*}
+Soit \(x \in \mathbb{R}\) fixé : \begin{align*}
+    sinx &= \sum_{k=0}^{n}sin^{(k)}(0)\frac{x^k}{k!} + \int_{0}^{x}sin^{(n+1)}(t) \frac{(x-t)^n}{n!}dt\\
+    &\int_{0}^{x}sin^{(n+1)}(t) \frac{(x-t)^n}{n!}dt = R_n(x)
+\end{align*}
+Mq \(R_n(x)\rightarrow_{n \to +\infty} 0, x>0\)\begin{align*}
+    |R_n(x)| &\leq \int_{0}^{x}|sin^{(n+1)}(t)\frac{(x-t)^n}{n!}|dt\\
+    &\leq \int_{0}^{x}1 \frac{(x-t)^n}{n!} dt\\
+    &= \frac{1}{n!}[\frac{(x-t)^{n+1}}{(n+1)!}]^x_0\\
+    &= \frac{x^n+1}{(n+1)!}\\
+    &\rightarrow_{x \to +\infty} 0
+\end{align*}
+Donc \begin{equation*}
+    sinx = \sum_{k=0}^{+\infty} sin^{(k)}(0)\frac{x^k}{k!}
+\end{equation*}
+
+
+
+
+\end{document}

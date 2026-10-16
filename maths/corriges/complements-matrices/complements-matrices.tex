@@ -1,0 +1,269 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+\noindent \colorbox{green}{220.9}
+\begin{equation*}
+    A = \begin{pmatrix}
+        1&0&1\\-1&2&1\\1&0&1
+    \end{pmatrix}
+\end{equation*}
+a/ \begin{align*}
+    &(x,y,z) \in Kerf\\
+    &\Leftrightarrow f(x,y,z) = (0,0,0)\\
+    &\Leftrightarrow \begin{cases}
+        x+y=0\\
+        -x+2y+z = 0
+    \end{cases}
+    \Leftrightarrow \begin{cases}
+        z = -x\\
+        y = x
+    \end{cases}
+\end{align*}
+Donc, Kerf = Vect(1,1,-1)\\
+\begin{align*}
+    Imf &= \{(X,Y,Z) | \exists x,y,z, (X,Y,Z) = (x+z,-x+2y+z, x+z)\}\\
+    &= Vect(f(e_1), f(e_2), f(e_3))\\
+    &= Vect((1,-1,1), (0,2,0))
+\end{align*}
+* \(Rg(A) = 2\)\\
+Car \(C_3 = C_1 + C_2\) et \(C_1\) et \(C_2\) sont libres
+* Th du rang : dimKerA = 3-2 = 1\\
+* \(C_1 + C_2 - C_3 = 0\)\\
+Donc \(\begin{pmatrix}
+    1\\1\\-1
+\end{pmatrix} \in KerA\)\\
+Et donc \(KerA = Vect(\begin{pmatrix}
+    1\\1\\-1
+\end{pmatrix})\)
+* \begin{align*}
+    ImA &= Vect(C_1, C_2,C_3)\\
+    &= Vect(C_1, C_2)
+\end{align*}
+\((C_1,C_2,E)\) est une base\\
+\begin{equation*}
+    \begin{pmatrix}
+        1&0&1\\-1&2&1\\1&0&1
+    \end{pmatrix}\begin{pmatrix}
+        1\\1\\-1
+    \end{pmatrix} f:\mathbb{R}^3\to \mathbb{R^3}
+\end{equation*}
+b/ Soit \(P = Mat(C_1,C_2,E)\)
+\begin{equation*}
+    det P = -4
+\end{equation*}
+Donc P est inversible\\
+Donc \((C_1,C_2,E)\) est une base de \(M_{3,1}(\mathbb{R})\)\\
+Donc \(ImA\oplus KerA = M_{3,1}(\mathbb{R})\)
+\begin{align*}
+    Mat_{C_1,C_2,E}(f) &= \begin{pmatrix}
+        2&0&0\\0&2&0\\0&0&0
+    \end{pmatrix}\\
+    f(E) &= 0\\
+    AC_1 &= \begin{pmatrix}
+        1&0&1\\-1&2&1\\1&0&1
+    \end{pmatrix}\begin{pmatrix}
+        1\\-1\\1
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        2\\-2\\2
+    \end{pmatrix} = 2C_1 + 0C_2 + 0E\\
+    AC_2 &= A\begin{pmatrix}
+        0\\2\\0
+    \end{pmatrix}\\
+    &=\begin{pmatrix}
+        0\\4\\0
+    \end{pmatrix} = 0C_1 + 2C_2 + 0E
+\end{align*}
+\begin{equation*}
+    f = 2Id \circ p
+\end{equation*}
+
+\noindent \colorbox{green}{220.1}\\
+\(u(e_1) = e_2\\
+u(e_2) = 0\\
+u(e_3) = 0\\
+e_3 \in Ker u\\
+e_2 \in Ker u\)\\
+donc \(dim Keru \geq 2\\
+e_2 \in Imu\)\\
+donc \(Keru \cap Imu \neq \{0\}\)
+\(u^2 = 0\) et \(u \neq 0\)\\
+donc \(Imu \subset Keru\) et \(Imu \neq \{0\}\)\\
+donc \(1 \leq rgu \leq dimKeru\)\\
+TDR : rgu + dim Keru = 3\\
+donc rg = 1 et dimKeru = 2\\
+Soit \(e_1 \notin Ker u\)\\
+on pose \(e_2 = u(e_1), e_2 \neq 0\), \(Im u = Vect(e_2) \subset Keru\)\\
+on complète \((e_2)\) en \((e_2, e_3)\) base de Keru\\
+
+\noindent \colorbox{green}{220.2}\\
+A,B \(\in M_n(\mathbb{R})\)
+\(\exists P \in GL_n(\mathbb{R})\) tq \(A = PBP^{-1}\) donc AP = PB\\
+où P = Q + iR\\
+où \([Q]_{ij} = Re([P]_{ij})\)\\
+\([R]_{ij} = Im([P]_{ij})\)\\
+On a A(Q+iR) = (Q+iR)B
+Donc (AQ-QB0) + i(AR - RB) = 0\\
+donc \(\begin{cases}
+    AQ-QB = 0\\
+    AR-RB = 0
+\end{cases}\)\\
+Cherchons une CL (réelle) de Q et R inversible en posant 
+S(t) = Q+tR\\
+On a AS(t) = S(t)B \(\forall t \in R\)\\
+J'espère que l'une des S(t) est inversible ! 
+\begin{align*}
+    f(t) = det(S(t))
+    &= \text{fct polynomiale de t}\\
+    &= \text{ def du det j'ai la flemme}\\
+    \exists ? t_0 tq 
+\end{align*}
+f(i) = detP \(\neq 0\)\\
+donc le polynome f n'est pas nul\\
+
+\noindent \colorbox{green}{220.15}\\
+\(C_1 + C_2 - C_3 = 0\)\\
+et (\(C_1, C_2\)) libre donc rgA = 2\\
+Donc dimKerA = 1\\
+Comme \(C_1 + C_2 - C_3 = 0, A\begin{pmatrix}
+    1\\1\\-1
+\end{pmatrix}=0\)\\
+Donc KerA = \(Vect(\begin{pmatrix}
+    1\\1\\-1
+\end{pmatrix})\)\\
+\(A+Id=\begin{pmatrix}
+    1&1&1\\1&1&1\\1&1&1 
+\end{pmatrix}\)\\
+\(C_1 -C_3 = 0\)\\
+Donc \(\begin{pmatrix}
+    1\\0\\-1
+\end{pmatrix} \in Ker(A+Id)\)\\
+\(A-Id = \begin{pmatrix}
+    -1&1&1\\1&-1&1\\1&1&-1
+\end{pmatrix}\)\\
+On a \(C_1 + C_2 = 0\)\\
+Donc \(\begin{pmatrix}
+    1\\1\\0
+\end{pmatrix} \in Ker(A-Id)\)\\
+Posons \(e_1'\) tq \(Mat_B(e_1')=\begin{pmatrix}
+    1\\1\\-1
+\end{pmatrix}\)\\
+\(e_2'\) ----- \((e_2') = \begin{pmatrix}
+    1\\0\\-1
+\end{pmatrix}\)\\
+\(e_3'\) ----- \((e_3') = \begin{pmatrix}
+    1\\1\\0
+\end{pmatrix}\)\\
+\begin{align*}
+    P &= Mat_B(e_1', e_2',e_3') = \begin{pmatrix}
+        1&1&1\\1&0&1\\-1&1&0
+    \end{pmatrix}\\
+    det P &= -1 \neq 0
+\end{align*}
+Donc \(C = (e_1', e_2',e_3')\) base de E\\
+ON a \(Mat_C(f) = \begin{pmatrix}
+    0&0&0\\0&-1&0\\0&0&1
+\end{pmatrix}\)\\
+b/ \begin{equation*}
+    A = PDP^{-1}
+\end{equation*}\\
+c/ \begin{align*}
+    X^n &= A^nX_0\\
+    &= PD^nP^{-1}\\
+    &= \begin{pmatrix}
+        1&1&1\\1&0&1\\-1&1&0
+    \end{pmatrix}\begin{pmatrix}
+        0&0&0\\0&(-1)^n&0\\0&0&1
+    \end{pmatrix}\begin{pmatrix}
+        -1&-1&-1\\1&-1&0\\1&0&1
+    \end{pmatrix}X_0\\
+    &= \begin{pmatrix}
+        (-1)^n+1\\1\\(-1)^{n+1}
+    \end{pmatrix}
+\end{align*}
+
+\noindent \colorbox{green}{220.3}\\
+\(\forall i \in \{1,\dots,n\}\)\begin{equation*}
+    |a_{i,i}|> \sum_{j=1,j\neq i}^{n}|a_{i,j}|
+\end{equation*}
+Supposons \((C_1,...,C_n)\) liée\\
+\(\exists (\lambda_1, ...,\lambda_n) \neq (0,...,0)\)
+tq\\
+\begin{equation*}
+    \sum_{i=1}^{n}\lambda_k C_k = \begin{pmatrix}
+        0\\\vdots\\0
+    \end{pmatrix}
+\end{equation*}
+ie \(\begin{cases}
+    \sum_{i=1}^{n}\lambda_k a_{1,k} = 0\\
+    \vdots\\
+    \sum_{i=1}^{n}\lambda_k a_{n,k} = 0
+\end{cases}\)\\
+Soit \(N \in [1,n]\) tq \(|\lambda_N| \geq |\lambda_i|, \forall i \in [1,n], N\neq i\)\\
+On a \begin{align*}
+    \sum_{j=1}^{n}\lambda_j a_{N, j}
+    \text{ donc } |\lambda_N a_{N,N}| = |\sum_{j=1}^{n} \lambda_j a_{N,j}|\\
+     |\lambda_N a_{N,N}| \leq \sum_{j=1}^{n} |\lambda_j a_{N,j}|\\
+      |a_{N,N}| < \sum_{j=1}^{n} |\lambda_N a_{N,j}|\\
+\end{align*}
+Absurde\\
+\noindent
+\colorbox{green}{220.4}\\
+rgA = 1, donc ImA est une droite vectorielle \begin{equation*}
+    \exists X \in M_{n,1}(\mathbb{R}), \text{ tq } ImA = Vect(X)
+\end{equation*}
+* \(C_k \in ImA\) donc \(\exists y_k\) tq  \(C_k = y_k X\)\\
+Posons \(Y = \begin{pmatrix}
+    y_1\\\vdots\\y_n
+\end{pmatrix}\) on a \(A = XY^T\)
+b/ \begin{align*}
+    A^2 &= XY^TXY^T\\
+    &= X(Y^TX)^TY^T\\
+    &= \lambda XY^T\\
+    &= \lambda A
+\end{align*}
+Avec \(\lambda = \sum_{k=1}^{n}x_ky_k\)\\
+
+\noindent \colorbox{green}{210.36}\\
+a/ \begin{align*}
+    f:&E\to E\\
+    g:&E \to E\\
+    f+g:&E\to E
+\end{align*}
+Mq Imf+g \(\subset\) Imf + Img\\
+Soit \(y \in Imf+g\)\\
+Donc \begin{align*}
+    \exists x \in E, y &= (f+g)(x)\\
+    &= f(x) + g(x)\\
+    &\in Imf + Img
+\end{align*}
+Donc \begin{align*}
+    rgf+g &\leq dim(Imf + Img)\\
+    &= dimImf + dimImg - dim(Imf\cap Img)\\
+    &\leq rgf + rgg
+\end{align*}
+\begin{align*}
+    rgf = rg(fg+(-g))\\
+    \leq rg(f+g) + rg(-g)
+\end{align*}
+
+\end{document}

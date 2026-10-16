@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}               % for LINE SPACING
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+
+\begin{document} \Large
+\noindent
+\colorbox{green}{Exercice 210.1}\\
+
+\noindent
+Soit \(f \in \mathcal{L}(E)\), pour \(k \geq n, f^k = 0, f^{n-1} \neq 0\)\\
+ANALYSE : \\
+Soit x \(\in E\) tq \((f^{n-1},...,x)\) base de E\\
+Donc \(f^{n-1}(x) \neq 0, x \neq 0\)
+\\
+\(f^{n-1} \neq 0 \)\\
+donc \(\exists x \in E\), tq \(f^{n-1}(x) \neq 0\)\\
+Soit \((\lambda_0,...,\lambda_{n-1}) \in \mathbb{K}^n\) tq \begin{equation*}
+    \sum_{k=0}^{n-1}\lambda_k f^k(x) = 0
+\end{equation*}
+\underline{Autre de formalisation}\\
+par récurrence forte \(\forall k \in [|0,n-1|], \lambda_k = 0\)\\
+\(\lambda_0 = 0\)\\
+Soit \(k\in [|0,n-1|]\)\\
+On suppose \(\lambda_0 = ... = \lambda_k = 0\)\begin{eqnarray*}
+    f^{n-k-2}(\sum_{i=k+1}^{n-1} \lambda_i f^i(x)) = 0\\
+    \to \lambda_{k+1} = 0
+\end{eqnarray*}\\
+\underline{Autre formalisation}\\
+Par l'absurde : on usppose qu'il existe un \(\lambda \neq 0\)\\
+On note \(k_0 min(k \text{ tq } \lambda_k \neq 0)\)\\
+Donc \(\sum_{k=k_0}^ 0{n-1}\lambda_k f^k(x) =0\)\\
+On compose par \(f^{n-k_0-1} \rightarrow \lambda_{k_0}f^{n-1}(x) = 0\)\\
+Absurde\\
+
+\noindent \colorbox{green}{Exercice 210.3}\\
+\noindent
+Soit x,y \(\in E\). (x, f(x))\\
+\underline{Si (x,y) libre}\\
+\(\exists \lambda_x \in \mathbb{K}, f(x) = \lambda_x x\)
+\begin{align*}
+    \lambda_{x+y}(x+y) &= f(x+y)\\
+    &= f(x) + f(y)\\
+    &= \lambda_x x + \lambda_y y
+\end{align*}
+donc \((\lambda_{x+y} - \lambda_x)x + (\lambda_{x+y}-\lambda_y)y = 0\)\\
+donc \(\lambda_{x+y} - \lambda_x = 0\) et \(\lambda_{x+y} - \lambda_y = 0\) 
+par liberté de (x,y)\\
+donc \(\lambda_x = \lambda_y\)\\
+\underline{Si (x,y) liée, \(x \neq 0, y \neq 0\)}
+\begin{align*}
+    \exists \mu \in \mathbb{K}, y = \mu x\\
+    \lambda_y y &= f(y)\\
+    &= f(\mu x)\\
+    &= \mu f(x)\\
+    &= \mu \lambda_x x 
+    &= \lambda_x y
+\end{align*}
+Donc \(\lambda_x = \lambda_y\) car \(y \neq 0\)\\
+\underline{si x = 0 et \(y \neq 0\)}\\
+f(x) = 0\\
+
+\noindent
+\colorbox{green}{210.2}\\
+b/ \((dim Ker f^p)_p\) est une suite croissante et majorée par dimE donc 
+stationnaire.\\
+On pose \(r = min({p, dim Kerf^p = Kerf^{p+1}})\)\\
+Par a/, \(Kerf^r \subset Kerf^{r+1}\)\\
+Et \(dim Kerf^r = dim Ker f^{r+1}\)\\
+Donc \(Ker f^r = Ker f^{r+1}\)\\
+c/ Mq \(\forall p \geq n, Kerf^p = Kerf^r\)\\
+* Init\\
+* Soit \(p\geq n\)\\
+On suppose \(Kerf^p = Kerf^r\)\\
+On veut montrer \(Kerf^{p+1} = Kerf^p\)\\
+\(\subset\) voir a/\\
+\(\supset\) Soit \(x \in Kerf^{p+1}\)\\
+ie \(f^{p+1}(x) = 0\)\\
+\(f^p(f(x)) = 0\)
+Donc f(x) \(\in Ker^p = Kerf^r\) par HR\\
+Donc \(f^{r+1}(x) = 0\)
+Donc x \(\in Kerf^{r+1} = Kerf^r\)\\
+d/ On a d'après le TH du rang \(dimE = dimKerf^r + Imf^r\)\\
+* Montrons \(Kerf^r \cap Imf^r = {0}\)\\
+Soit \(x \in Ker^r \cap Imf^r\)\\
+\(f^r(x)=0\) et \(\exists t \in E\) tq \(f^r(t) = x\)\\
+Donc \(f^{2r}(t) = 0\)
+Donc t \(\in kerf^{2r} = Kerf^r\) d'après c/\\
+Donc x = 0\\
+e/ Mq \((Imf^p)_p\) est décroissante\\
+Soit \(p \in \mathbb{N}\)\\
+Soit x \(\in Imf^{p+1}\)
+Donc \begin{align*}
+    \exists t \in E, x &= f^{p+1}(t)\\
+    &= f^p(f(t))\\
+    &\in Imf^p
+\end{align*}
+
+\noindent \colorbox{green}{210.18}\\
+Soit \((\lambda_i)_{i \in [|0,n|]}\), tq \begin{align*}
+    \sum_{i=0}^{n}\lambda_i L_i &= 0\\
+    \text{Soit \(k \in [|0,n|]\) } \sum_{i=0}^{n}\lambda_i L_i(\alpha_k) &= 0\\
+    &= \lambda_k = 0
+\end{align*}
+
+\noindent \colorbox{green}{210.25}\\
+Analyse : \\
+Soit \(f \in E\) tq \(\exists f_1 \in F_1, \exists f_2 \in F_2, \exists f_3 \in F_3\)\begin{equation*}
+    f = f_1 + f_2 + f_3
+\end{equation*}
+En particulier x = 0 \\
+f(0) = \(f_1(0)\)\\
+\(f_1\) constante donc \(\forall x, f(x) = f(0)\)\\
+* \(x \in [-1, 0]\)\\
+f(x) = f(0) + \(f_3(x)\)
+etc etc 
+
+
+
+
+\end{document}

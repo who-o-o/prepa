@@ -1,0 +1,80 @@
+\documentclass[a4paper,twocolumn,landscape]{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+\colorbox{green}{Exercice 1}\\
+
+\underline{\(t < 0\)} \(u_e(t) = 0\), s(t) = 0\\
+\underline{\(t > 0\)} \begin{align*}
+    &u_s(t) + \frac{1}{\omega_c}\frac{du_s}{dt} = -2u_e(t)\\
+    &u_s(t) = -2(1-e^{-\frac{t}{\tau}})
+\end{align*}
+
+\colorbox{green}{Exercice 2}\\
+\begin{align*}
+    &t > 0\\
+    &u_s(t) + \frac{1}{Q\omega_0}\frac{du_s}{dt} + \frac{1}{\omega_0^2}\frac{d^2u_s}{dt^2} = -\frac{5}{\omega_0^2} \frac{d^2u_e(t)}{dt^2} = 0\\
+    &\frac{d^2u_s}{dt^2} + \frac{\omega_0}{Q} \frac{du_s}{dt} + \omega_0^2u_s(t) = 0, Q=4\\
+    &\Delta = \omega_0^2(\frac{1}{Q}-4) < 0\\
+    &r_1^2 = -\frac{\omega_0}{2Q} \pm j\omega_0 \sqrt{1-\frac{1}{4Q^2}}\\
+    u_s(t) &= ae^{r_1t} + be^{r_2t}\\
+    &= e^{-\frac{\omega_0}{2Q}t}(Acos(\omega_0 t + \varphi))\\
+    u_s(0^+)-u_s(0^-) &= \underline{H}(\omega \to +\infty)(u_e(0^+) - u_e(0^-))\\
+    &\int_{0^-}^{0^+}u_s(t) + \int_{0^-}^{0^+}\frac{1}{Q\omega_0}\frac{du_s}{dt} + \int_{0^-}^{0^+}\frac{1}{\omega_0^2}\frac{d^2u_s}{dt^2} = \int_{0^-}^{0^+}-\frac{5}{\omega_0^2} \frac{d^2u_e(t)}{dt^2}
+\end{align*}
+\( \begin{cases}
+        u_s(0^+) = -5\\
+        \frac{du_s(0^+)}{dt} = \frac{5}{4}\omega_0
+    \end{cases}\)\\
+\(A^= 25 + \frac{25}{64}\)\\
+\(tan\varphi = \frac{1}{8}\)\\
+\(A \simeq -5\)
+
+\begin{equation*}
+    u_s(t) = -5e^{-\frac{\omega_0 t}{8}} cos(\omega_0 t + arctan(\frac{1}{8}))
+\end{equation*}
+\noindent
+3/ \\
+\(r_1^2 = -\frac{-\omega_0}{0.4} \pm \frac{\omega_0 \sqrt{21}}{2}\)\\
+\(\nearrow -0.2 \omega_0\)\\
+\(\searrow -4.8 \omega_0\)\\
+\begin{equation*}
+    u_s(t) = \lambda e^{-0.2\omega_0 t} + \mu e^{-4.8\omega_0 t}
+\end{equation*}
+\(u_s(0^+) = -5\)\\
+\(\frac{du_s}{dt}(0^+) = 25\omega_0\)\\
+\(\begin{cases}
+    \lambda \simeq 0.21\\
+    \mu \simeq -5.21
+\end{cases}\)
+
+\begin{equation*}
+     u_s(t) = 0.21e^{-0.2\omega_0 t} -5.21 e^{-4.8\omega_0 t}
+\end{equation*}
+
+4/ Q=4 résonnance \(\omega_c = \omega_0 \sqrt{1-\frac{1}{2Q^2}}\)\\
+\(G_dB = 20log5 + 40log(\frac{\omega}{\omega_0})\)\\
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,383 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath,mathtools}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}
+\usepackage{tkz-tab}    
+\usepackage{amssymb}          
+\usepackage{multicol}  
+\usepackage{esint}
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document} \noindent
+\colorbox{green}{260.1}\\
+Soit \(M \in \mathcal{M}_n(\mathbb{R})\) tel que \begin{align*}
+    &M^2 - M^T = I_n \\
+    &(M^T)^2 - M = I_n \\
+    &(M^2 - I_n)^2 - M = I_n \\
+    &M^4 - 2M^2 + I_n - M = I_n \\
+    P &= X^4 - 2X^2 - X \text{ annule M}\\
+    &= X(X^3-2-1)\\
+    &= X(X+1)(X^2 - X -1)
+\end{align*}
+Donc P est scindé à racines simples \\
+Donc \fbox{M est diagonalisable}\\
+
+\noindent \colorbox{green}{260.16}\\
+\begin{align*}
+    M &= \begin{pmatrix}
+        0&-1& & (0) & \\
+        1 & 0 & & \\
+         & & 0 & 0 & 1\\
+        &(0)& 1 & 0 & 0 \\
+        & & 0 & 1 & 0
+    \end{pmatrix}\\
+    M^k &= \begin{pmatrix}
+        A^k & 0 \\
+        0 & B^k
+    \end{pmatrix}\\
+    A^2 &= \begin{pmatrix}
+        -1 & 0 \\ 0 & -1
+    \end{pmatrix}\\
+    A^4 &= I_2\\
+    B^2 &= \begin{pmatrix}
+        0 & 1 & 0 \\ 0 & 0 & 1\\ 1& 0 & 0
+    \end{pmatrix}\\
+    B^3 &= I_3\\
+    p &= ppcm(4,3) = 12 \text{ constant }\\
+    Q &= X^12-1 \text{ est annulateur de M}\\
+    rac(Q) = \mathbb{U}_{12}
+\end{align*}
+Q scindé à racines simples. donc M est diagonalisable\\
+b/ \begin{align*}
+    x = e_1 + e_3\\
+    m(x) = e_2 + e_4 \\
+    m^2 (x) = e_1 + e_5\\
+    m^3(x) = -e_2 + e_3\\
+    m^4(x) = e_1 + e_4 \\
+    m^5(x) = e_2 + e_5 
+\end{align*}
+B base canonique : \begin{align*}
+    det(x, m(x),...,m^4(x)) &= \begin{vmatrix}
+        1 & 0 & -1 & 0 & 1\\
+        0 & 1 & 0 & -1 & 0\\
+        1& 0& 0 & 1 & 0 \\
+        0& 1& 0 & 0 & 1\\
+        0& 0& 1& 0 & 0\\
+    \end{vmatrix}\\
+    &= 1 \begin{vmatrix}
+        1 & 0 & 0 & 1\\
+        0 & 1 & -1 & 0\\
+        1& 0 & 1 & 0 \\
+        0& 1 & 0 & -1
+    \end{vmatrix}\\
+    &=1\begin{vmatrix}
+        1 & 0 & 1 \\ 0 & -1& 0 \\ 1&1&0
+    \end{vmatrix}
+    + 1 \begin{vmatrix}
+        1 & 0 & 0 \\ 0 & 1 & -1 \\ 1& 0 & 1
+    \end{vmatrix}\\
+    &= 1\times 1 + 1 \times 1\\
+    &= 2 \\
+    &\neq 0\\
+    M' &= \begin{pmatrix}
+        0 & 0 & 0 & 0 & 1\\
+        1 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 & 1\\
+        0 & 0 & 1 & 0 & -1\\
+        0 & 0 & 0 & 1 & 0
+    \end{pmatrix}
+\end{align*}
+
+\noindent \colorbox{green}{260.13}\\
+rgA = 1, donc ImA est une droite vectorielle \begin{equation*}
+    \exists X \in M_{n,1}(\mathbb{R}), \text{ tq } ImA = Vect(X)
+\end{equation*}
+* \(C_k \in ImA\) donc \(\exists y_k\) tq  \(C_k = y_k X\)\\
+Posons \(Y = \begin{pmatrix}
+    y_1\\\vdots\\y_n
+\end{pmatrix}\) on a \(A = XY^T\)
+\begin{align*}
+    A^2 &= XY^TXY^T\\
+    &= X(Y^TX)^TY^T\\
+    &= \lambda XY^T\\
+    &= \lambda A
+\end{align*}
+Avec \(\lambda = \sum_{k=1}^{n}x_ky_k \Leftrightarrow \lambda = trA\)\\
+b/ Si A diagonalisable. \(\exists Q \in GL_n(\mathbb{K})\) 
+tq A = \(Q\begin{pmatrix}
+    0 & & (0)\\
+    & \ddots & \\
+    (0) & & 0
+\end{pmatrix}Q^{-1}\)\\
+Or rg A = 1\\
+On a \(X^2\) annulateur de A\\
+\(\Pi_A | X^2\) donc \(\Pi_A = X\) ou \(\Pi_A = X^2\)\\
+\underline{Si \(\Pi_A = X\)} X annule A, donc A  = 0. Absurde\\
+Donc \(\Pi_A = X^2\), or \(\Pi_A\) n'est pas scindé à racines simples
+donc A n'est pas diagonalisable\\
+
+\noindent \colorbox{green}{260.4}\\
+\(u \in \mathcal{L}(E)\) tq \(u^3 = Id\\
+P = X^3 - 1\)\\
+P annulateur de u \begin{align*}
+    P &= (X-1)(X^2 + X + 1)\\
+    (X-1)&\wedge(X^2 + X + 1) =1\\
+    Ker(P(u)) &= Ker(P_1(u))\oplus Ker(P_2(u))\\
+    E &= Ker(u-Id) \oplus Ker(u^2 + u + Id)\\
+    Im(u-Id) &= Ker(u^2 + u + Id)\\
+    rg(P_1(u)) &= dimE - dimKer(P_1(u))\\
+    &= dimKer(u^2 + u + id)
+\end{align*}
+Soit \(x \in Im(P_1(u))\)\begin{align*}
+    \exists t \in E \text{ tq } x = P_2(u)(t)\\
+    P_2(u)(x) = P_2(u) \circ P_1(u)(t)\\
+    = (P_2P_1)(u)(t)\\
+    = P(u)(t)\\
+    &= 0 
+\end{align*}
+
+\noindent \colorbox{green}{260.3}\\
+\begin{align*}
+    A = \begin{pmatrix}
+        1 & & ... & & 1\\
+         & 0 & ... & 0 & \\
+        \vdots & \vdots &  & \vdots & \vdots \\
+         & 0 & ... & 0 & \\
+        1 & & ... & & 1
+    \end{pmatrix}
+\end{align*}
+1/ rgA = 2\\
+2/ dimKerA = n-2\\
+\(dimE_0(A) = n-2 \leq m_0 \)\\
+\(dimE_0(A) = n-2 = m_0 \) car A symétrique\\
+3/ \begin{align*}
+    A^2 &= \begin{pmatrix}
+        n &2 & ... &2& n\\
+         2& 2 & ... & 2 & 2\\
+        \vdots & \vdots &  & \vdots & \vdots \\
+         2& 2 & ... & 2 & 2\\
+        n& 2& ... &2 & n
+    \end{pmatrix}\\
+    \exists Q \text{ inversible tq } A &= Q \begin{pmatrix}
+        0 & & &  \\
+          & \ddots & & & \\
+          & & 0 & & \\
+          & & & \lambda_1 & \\
+          & & & & \lambda_2 & \\
+          & & & & & & \ddots
+    \end{pmatrix}Q^{-1}\\
+    \text{Donc } A^2 &= Q \begin{pmatrix}
+        0 & & &  \\
+          & \ddots & & & \\
+          & & 0 & & \\
+          & & & \lambda_1^2 & \\
+          & & & & \lambda_2^2 & \\
+          & & & & & & \ddots
+    \end{pmatrix}Q^{-1}
+\end{align*}
+\begin{align*}
+    \lambda_1 + \lambda_2 &= trA = 2 \\
+    \lambda_1^2 + \lambda_2^2 &= 2(n-2) + 2n \\
+    &= 4(n-1)\\
+    (\lambda_1 + \lambda_2)^2 &= \lambda_1^2 + \lambda_2^2 + 2\lambda_1 \lambda_2\\
+    \lambda_1 \lambda_2 &= \frac{1}{2}((\lambda_1 + \lambda_2)^2 - (\lambda_1^2 + \lambda_2^2))\\
+    &\begin{cases}
+        \lambda_1 + \lambda_2 = 2\\
+        \lambda_1 \lambda_2 = 4-2n
+    \end{cases}\\
+    &\Leftrightarrow \lambda_1 \lambda_2 \text{ sont les racines de } X^2 - 2X + 4 - 2n\\
+    \Delta &= 4 - 4(4-2n)\\
+    &= 4(2n-3)>0\\
+    \Rightarrow \{\lambda_1, \lambda_2\} &= \{1 + \sqrt{2n-3, 1-\sqrt{2n-3}}\}
+\end{align*}
+a4/ \(Sp(A) = \{\lambda_1, \lambda_2, 0\}\)\\
+\begin{equation*}
+    (X-\lambda_1)(X-\lambda_2)X \big| \Pi_A \big| \chi_A = (X-\lambda_1)(X-\lambda_2)X^{n-2}
+\end{equation*}
+A diagonalisable\\
+Donc \(\Pi_A\) scindé simple\\
+DOnc \(\Pi_A = X^3 - 2X^2 + 4(-2n)X\)\\
+\(\Pi_A = 0\)\\
+Donc \(A^3 - 2A^2 + (4-2n)A = 0\)\\
+On suppose \(A^k = \lambda_k A + \mu_k A^2\)\\
+\(A^{k+1} = \lambda_k A^2 + \mu_k A^3 \in Vect(A, A^2)\) \\
+
+\noindent 
+\(A^k ?\)
+\(\Pi_A (A) = 0\)\\
+division euclidienne de \(X^k\) par \(\Pi_A\)\\
+\(\begin{cases}
+    X^k = Q\Pi_A + R \\
+    R \in \mathbb{R}_2[X]
+\end{cases}\)\\
+je vois pas le tableau\\
+Donc \begin{equation*}
+    A^k = (Q\Pi_A)(A) + \lambda_k A^2 + \mu_k A + \nu_k I_n
+\end{equation*}\\
+
+\noindent \colorbox{green}{260.5}\\
+\underline{\(\varphi\) est linéaire} \\
+par linéarité de la dérivée et la bilinéarité du produit \\
+\underline{\(\varphi\) est à valeurs dans \(\mathbb{R}_4[X]\)}\\
+\begin{align*}
+    \varphi(X^k) &= (X^2 -1)X^{k-1} - (4X+1)X^k\\
+    &= (k-4)X^{k+1} - X^k - kX^{k-1}\\
+    &\in \mathbb{R}_4[X]\\
+    \varphi(1) &\in \mathbb{R}_4[X]
+\end{align*}
+b/ Soit \begin{align*}
+    I_1 &= ]-\infty, -1[\\
+    I_2 &= ]-1, 1[\\
+    I_3 &= ] 1, +\infty[
+\end{align*}
+Sur l'intervalle \(I_k\)\\
+C'est une EQD linéaire d'ordre 1 homogène \\
+\begin{align*}
+    S = \begin{cases}
+        I_r \to \mathbb{R}\\
+        x \mapsto A|x-1|^{\frac{5+\lambda}{2}}|x+1|^{\frac{3-\lambda}{2}}
+    \end{cases}
+\end{align*}
+c/ \begin{align*}
+    \varphi(P) &= \lambda P\\
+    &\Leftrightarrow (X^2 -1)P'-(4X+1)P = \lambda P \\
+    &\Leftrightarrow \forall x \in ]1, +\infty[\\
+    &(x^2-1)P'(x) - (4x+1)P(x) = \lambda P(x)\\
+    &\Leftrightarrow \forall x \in ]1, +\infty[ \\
+    P'(x) &= \frac{4x+1+\lambda}{x^2-1}P(x)\\
+    &= (\frac{5+\lambda}{2(x-1)} + \frac{3-\lambda}{2(x+1)}) P(x)\\
+    &\Leftrightarrow P \text{ sol de } E_\lambda \text{ de la question b }\\
+    &\Leftrightarrow \exists A \text{ tq } P = A(X-1)^{\frac{5+\lambda}{2}}(X+1)^{\frac{3-\lambda}{2}}
+\end{align*}\\
+En posant \(\lambda\) tq \begin{align*}
+    \frac{5+\lambda}{2}, \frac{3-\lambda}{2} \in \mathbb{N}\\
+    \frac{5+\lambda}{2} + \frac{3-\lambda}{2} \leq 4
+\end{align*}
+\begin{align*}
+    \lambda = -5 \\
+    \lambda = -3 \\
+    \lambda = -1 \\
+    \lambda = 1 \\
+    \lambda = 3 
+\end{align*}
+
+\noindent \colorbox{green}{260.27}\\
+\begin{align*}
+    A &= \begin{pmatrix}
+        0 & 1 & 0 \\ 1& 0 & 1\\ 2& 0 & 0
+    \end{pmatrix} &B = \begin{pmatrix}
+        0 & 1 & 1\\ 1& 0 & 0\\ 0 & 2 & 0
+    \end{pmatrix}\\
+    \chi_A &= \begin{vmatrix}
+        X&-1&0\\-1&X&-1\\-2&0&X
+    \end{vmatrix} &\chi_B = \begin{vmatrix}
+        X&-1&-1\\-1&X&0\\0&-2&X
+    \end{vmatrix}\\
+    \chi_A &= X^3 - X - 2 &\chi_B = X^3 - X - 2
+\end{align*}
+b/ \begin{align*}
+    f:x &\mapsto x^3 - x - 2\\
+    f':x &= 3x^2 -1\\
+    &= 3(x-\frac{1}{\sqrt{3}})(1+\frac{1}{\sqrt{3}})\\
+    f(-\frac{1}{\sqrt{3}}) &= \frac{1}{3^\frac{3}{2}} - \frac{1}{\sqrt{3}}-2 < 0
+\end{align*}
+Veuillez imaginer un beau tableau de variations j'ai la flemme\\
+f admet une unique racine \(\alpha\) \begin{align*}
+    \chi_A = (X-\alpha)(X-\beta)(X-\overline{\beta}) \indent \beta \notin \mathbb{R}
+\end{align*}
+non scindé dans \(\mathbb{R}\) \\
+Alors A et B ne sont pas diagonalisables\\
+\(\chi_A\) est scindé simple dans \(\mathbb{R}\)\\
+A et B sont semblables dans \(\mathcal{M}_3(\mathbb{C})\)
+à \(\begin{pmatrix}
+    \alpha & & \\ & \beta & \\ & & \overline{\beta}
+\end{pmatrix}\) donc sont semblables entre elles dans \(\mathbb{C}\)\\
+
+\noindent \colorbox{green}{260.30}\\
+Montrons que : \begin{equation*}
+    \chi_A(B) \in GL_n(\mathbb{K}) \Leftrightarrow Sp_\mathbb{C}(A)\cap Sp_\mathbb{C}(B) = \oslash 
+\end{equation*}\\
+\fbox{\(\Rightarrow\)} Contraposée : supposons \(Sp_\mathbb{C}(A)\cap Sp_\mathbb{C}(B) \neq \oslash \)
+Donc \(\exists \lambda \in \mathbb{C}\) vp de A et de B : \begin{align*}
+    \chi_A &= (X-\lambda)Q_A\\
+    \chi_B &= (X-\lambda)Q_B\\
+    \chi_A(B) &= (B-\lambda I_n)Q_A(B)\\
+    det(\chi_A(B)) &= det(B-\lambda I_n)det(Q_A(B))\\
+    &= 0 \text{ car \(\lambda\) vp de B}
+\end{align*}
+\fbox{\(\Leftarrow\)} Contraposée : \(det(\chi_A(B)) = 0\) \\
+\(\chi_A \in \mathbb{C}[X]\)\\
+Donc \(\chi_A\) scindé : \(\chi_A = \prod_{k=1}^{p}(X-\lambda_k)^{m(\lambda_k)}\), 
+\((\lambda_k)_k\) exactement les vp de A\\
+Donc \begin{align*}
+    0 &= det(\chi_A(B))\\
+    &= det(\prod_{k=1}^{p}(B-\lambda_k)^{m(\lambda_k)})\\
+    &= \prod_{k=1}^{p}det((X-\lambda_k)^{m(\lambda_k)})
+\end{align*}
+Donc \(\exists k \in [|1,p|]\) tq \(det(B-\lambda_k I_n) = 0\)
+donc \(\lambda_k\) vp de B \\
+Alors \(Sp_\mathbb{C}(A)\cap Sp_\mathbb{C}(B) \neq \oslash \)
+
+\noindent \colorbox{green}{260.21}\\
+\begin{align*}
+    A = \begin{pmatrix}
+        -1 & 1 & -3\\ 0 & 2 & -1 \\ 1& 0 & 2
+    \end{pmatrix}\\
+    \chi_A = (X-1)^3
+\end{align*}
+Si A est diagonalisable alors \(A = PIdP^{-1} = Id\) absurde\\
+Donc A n'est pas diagonalisable\\
+b/ On a \(B = A -I_3\)\\
+Par le théorème de Cayley-Hamilton \(\chi_A(A) = 0\) donc \(B^3 = 0\)\\
+\begin{align*}
+    B &= \begin{pmatrix}
+        -2 & 1 & -3\\0& 1& -1\\1&0&1
+    \end{pmatrix} \text{ donc } &B^2 = \begin{pmatrix}
+        1&-1&2\\-1&1&-2\\-1&1&-2
+    \end{pmatrix}
+\end{align*}
+Donc \(\exists X \in \mathcal{M}_{3,1}(\mathbb{R})\) tq \(X \notin KerB\)\\
+Soit \(\lambda_1, \lambda_2, \lambda_3\) tq \(\lambda_1 X + \lambda_2 B X + \lambda_3 B^2 X = 0\)\\
+\(\lambda_1B^2 X = 0\) donc \(\lambda_1 = 0\)\\
+En multipliant par B on a \(\lambda_2\) = 0\\
+Donc \(\lambda_3 B^2 X = 0\)\\
+Donc  \(\lambda_3 = 0\)\\
+Ainsi \((X, BX, B^2X)\) est une base de \(\mathcal{M}_{3,1}(\mathbb{R})\)\\
+\begin{align*}
+    Mat(b, \mathcal{B}) &= \begin{pmatrix}
+        0 & 1 & 0 \\ 0 & 0 & 1\\ 0 & 0 & 0 
+    \end{pmatrix}\\
+    P&= Pass(\mathcal{B}_\mathcal{C} \to \mathcal{B})
+\end{align*}
+On a \(\begin{pmatrix}
+    1\\0\\0
+\end{pmatrix} \notin KerB\)\begin{align*}
+    Pass(\mathcal{B}_\mathcal{C} \to \mathcal{B}) &= \begin{pmatrix}
+        1 & -2 & 1\\ -1 & 0 & 0 \\ -1 & 1 & 0
+    \end{pmatrix}\\
+    B &= PB'P^{-1}\\
+    A-I_3 &= PB'P{-1}\\
+    A &= PB'P{-1} + I_3\\
+    &= P(B'+I_3)P^{-1} \indent \text{ car } I_3 = P I_3 P^{-1}\\
+    B'+I_3 &= \begin{pmatrix}
+        1 & 1& 0\\ 0 & 1& 1\\ 0& 0 & 1
+    \end{pmatrix}
+\end{align*}
+
+
+
+
+\end{document}

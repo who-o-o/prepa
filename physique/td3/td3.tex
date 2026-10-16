@@ -1,0 +1,103 @@
+\documentclass[a4paper,twocolumn,landscape]{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+\noindent \colorbox{green}{Exercice 4}\\
+1 \begin{align*}
+    \vec{v_{R0}} &= \vec{v_G} + \vec{v_{|RG}}\\
+    Ec_{|_{R0}} &= \iiint_{(V)} \frac{1}{2}dm.\vec{v(M)}_{|R0}\\
+    &= \iiint_{(V)} \frac{1}{2} dm (\vec{v_G} + \vec{v_{|RG}})^2\\
+    &= \iiint_{(V)} \frac{1}{2}dm Vc^2 + \iiint_{(V)} \frac{1}{2}dm V_{|RG}^2 + \iiint_{(V)} dm\vec{V_G}.\vec{V_{|RG}}\\
+    Ec_{|R0} &= \frac{1}{2}mV_G^2 + Ec_{|RG} + \vec{V_G} \iiint_{(V)} dm\vec{V_{|RG}}\\
+    &\vec{v}(M)_{|RG} = \frac{d}{dt} \vec{GM}|_{RG}\\
+    &\vec{V_G} \iiint_{(V)} dm\vec{V_{|RG}} = \vec{v_G}\frac{d}{dt}(\iiint_{(V)} \vec{GM}|_{RG}.dm) = 0
+\end{align*}
+Donc \fbox{\(Ec_{R0} = \frac{1}{2}mV_{G}^2 + Ec|_{R0}\)}\\
+2 \begin{align*}
+    J = mR^2\\
+\end{align*}
+1a vitesse \(\omega\)\begin{align*}
+    Ec &= \frac{1}{2}J\omega^2\\
+    &= mR^2\omega^2 
+\end{align*}
+
+3 Donc \begin{align*}
+    Ec &= \frac{1}{2}J\omega^2 + \frac{1}{2}mV_G^2\\
+    &= \frac{1}{2}mR^2\omega^2 + \frac{1}{2}mR^2\omega^2\\
+    Ec_{|_{R0}} &= mr^2\omega^2
+\end{align*}
+4 Par conservation de Em : 
+\(mV_0^2 = mgsin\alpha\)
+d = \(\frac{v_0^2}{gsin\alpha}\)
+
+\noindent \colorbox{green}{Exercice 5}\\
+\begin{equation*}
+    \vec{Fie} = -m\vec{a_e} = -m\vec{a}
+\end{equation*}
+\underline{À l'équilibre} dans R0 : \(\vec{0} = \vec{P} + \vec{T} + \vec{Fie}\)\\
+\begin{align*}
+    tan\theta_e &= \frac{||\vec{Fie}||}{||\vec{P}||}\\
+    tan\theta_e &= \frac{a}{g}
+\end{align*}
+2. PFD à A dans R (non gal)\begin{align*}
+    m\frac{d\vec{v}}{dt}|_{R0} &= \vec{P} + \vec{Fie} + \vec{T} &\vec{v_A}|_{R} = l\dot{\theta}\vec{u_\theta}\\
+    &ml\ddot{\theta}\vec{u_\theta} - ml\dot{\theta}^2\vec{u_r} = -mg \vec{u_z} - ma\vec{u_y} - T\vec{u_r} &\frac{d\vec{v_A}}{dt}|_{R} = l\ddot{\theta}\vec{u_\theta} - l\dot{\theta}^2\vec{u_r}\\
+    &ml\ddot{\theta} + 0 = -mg sin\theta + macos\theta + 0 \text{ projeter sur \(\vec{u_\theta}\) }\\
+    &l\ddot{\theta} + 0 = -g sin\theta + acos\theta \\
+    & \ddot{\theta} + \frac{g}{l}sin\theta - \frac{a}{l}cos\theta = 0 \indent(1)& \theta = \theta_e + \varepsilon, \varepsilon << 1
+\end{align*}
+3. d.l. ordre 1 en \(\varepsilon\) \begin{align*}
+    sin(\theta_e + \varepsilon) = sin\theta_e + \varepsilon cos\theta_e\\
+    cos(\theta_e + \varepsilon) = cos\theta_e - \varepsilon sin\theta_e
+\end{align*}
+\begin{align*}
+    &(1) \indent \ddot{\varepsilon} + \frac{g}{l}sin\theta_e + \frac{g}{l}cos\theta_e - \frac{a}{l}cos\theta_e + \frac{a}{l}sin\theta_e.\varepsilon = 0\\
+    &\ddot{\varepsilon} + (\frac{g}{l}cos\theta_e + \frac{a}{l}sin\theta_e).\varepsilon(t) = 0
+\end{align*}
+oscillateur harmonique \(\Rightarrow\)
+\(\varepsilon\) varie sinuisoïdalement autour de 0 et \(\theta\) varie sinuisoïdalement autour de \(\theta_e\)\\
+Implique que l'équilibre est stable\\
+*\(T_0 = \frac{2\pi}{\omega_0}\)
+\(\omega_0^2 = \frac{g}{l}cos\theta_e + \frac{a}{l}sin\theta_e\)
+\(\frac{1}{1+tan^2\theta_e} = cos^2\theta_e = \frac{1}{1+\frac{a^2}{g^2}} = \frac{g^2}{a^2 + g^2}\)\\
+\(sin^2\theta_e = \frac{a^2}{a^2+g^2}\)
+\begin{eqnarray*}
+    \omega_0^2 = \frac{g^2}{l}\frac{1}{\sqrt{a^2+g^2}} + \frac{a^2}{l}\frac{1}{\sqrt{a^2 + g^2}}\\
+    \omega_0^2 = \frac{1}{l}\sqrt{a^2+g^2}
+\end{eqnarray*}
+
+\noindent \colorbox{green}{Exercice 8}\\
+Dans R : réf lié à la tige en rotation autour de Oz dans R0 galiléen\begin{align*}
+    \vec{Fie} &= m\omega^2 \vec{HM}\\
+    \vec{Fie} &= m\omega^2 x sin\alpha \vec{u_r}
+\end{align*}
+\underline{À l'équilibre} \(\vec{0} = \vec{P} + \vec{R} + \vec{Fie}\)\\
+\begin{align*}
+    tan \alpha &= \frac{||\vec{P}||}{||\vec{Fie}||}\\
+    &= \frac{mg}{m\omega^2x_esin\alpha}\\
+    \Rightarrow x_e &= \frac{gcos\alpha}{\omega^2 sin\alpha} \indent (OK)
+\end{align*}
+On va dire \(x = x_e + \varepsilon\)\\
+PFD dans R à l'anneau\begin{align*}
+    m\vec{a}(M)|_R &= \vec{P} + \vec{R} + \vec{Fie} + \vec{Fic}\\
+    m\ddot{x}\vec{u_x} &= \vec{P}+\vec{R}+\vec{Fie} -2m\vec{v_r}\wedge \vec{\omega}\\
+    \text{ Tout projeter selon \(\vec{u_x}\)}
+\end{align*}
+\end{document}

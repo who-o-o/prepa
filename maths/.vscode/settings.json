@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "corriges/algebre-lineaire.aux": true,
+        "corriges/algebre-lineaire.log": true,
+        "corriges/algebre-lineaire.synctex.gz": true
+    },
+    "hide-files.files": [
+        "corriges/algebre-lineaire.aux",
+        "corriges/algebre-lineaire.log",
+        "corriges/algebre-lineaire.synctex.gz"
+    ]
+}

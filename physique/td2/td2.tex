@@ -1,0 +1,134 @@
+\documentclass[a4paper,twocolumn,landscape]{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document}
+
+\noindent \colorbox{green}{Ex1}\\
+a/ \(f_e = \frac{1}{T_e}\) où \(f_e = 44.1kHz\)\\
+donc \(T_e = 2,3 \times 10^{-5}\)
+donc il y a 195 804 000 échantillons
+donc 783,2 Mo\\
+
+\noindent
+b/ \(2f_{max} = 40 kHz\)\\
+\(2f_{max} < f_e\) OUI\\
+Avec le bruit parasite\\
+\(2f_p = 84.1 kHz\)
+\(2f_p > f_e\) NON\\
+
+\noindent 
+d/ Passe-bas, filtre anti-repliement \\
+\(f_c = \frac{f_e}{2}\)\\
+
+\noindent
+e/ \(\frac{f_e}{2}\), 20kHz, car 20kHz \(< \frac{f_e}{2}\)\\
+
+\noindent \colorbox{green}{Ex2}\\
+1/
+\(T_e = \frac{1}{f_e}\)\\
+\(T_e = 50 \mu s\)\\
+\(\Delta f = \frac{f_e}{N}\)\\
+\(\Delta f = 20Hz\)\\
+\(f_e > 2f_{max}\)\\
+\(\Rightarrow f_{max} < \frac{f_e}{2}\)\\
+\(f_{max} < 10kHz\)\\
+
+\(\Delta f \searrow \Rightarrow \begin{cases}
+    N \nearrow\\
+    f_e \searrow
+\end{cases}\\
+f_{max} \nearrow \Rightarrow f_e \nearrow \)\\
+
+\noindent 
+2/ \(NT_e = t_{obs}\)\\
+\(\frac{f_e}{N}<20Hz\)\\
+donc \fbox{\(t_{obs} > \frac{1}{20}s\)}\\
+
+\noindent
+3/ \(f_{max} = 9f_1\)\\
+\(f_{max} = 900 Hz\)\\
+\fbox{\(f_e > 2f_{max}\)}
+Je propose \(f_e = 2000Hz\)
+il faut \(\Delta f < 2000Hz\)\\
+donc \(\frac{f_e}{N}<200Hz\)\\
+donc \(\frac{f_e}{200}< N\)\\
+donc \fbox{\(N>10\)}\\
+Je propose N = 1000\\
+
+\noindent
+\colorbox{green}{Ex3}\\
+\(T_{acq} = 89s\)\\
+\fbox{\(f_e = \frac{N}{T_{acq}}\)}\\
+spectre 1 : \(f_e = 3.3 Hz, \frac{f_e}{2} = 1.65Hz\)\\
+spectre 2 : \(f_e = 11.5Hz, \frac{f_e}{2} = 5.525Hz\)\\
+spectre 3 : \(f_e = 33.3Hz, \frac{f_e}{2} = 16.6Hz\)\\
+T = 0.5\\
+\(f_1 = 2Hz > \frac{f_e}{2}\\
+f_2 = 4Hz  \\
+f_3 = 6Hz > \frac{f_e}{2}\\
+f_4 = 8Hz\)\\
+
+\noindent
+\colorbox{green}{Ex4}\\
+a/ \(V_A = 0 = V_M\)\\
+donc quelque soit la valeur des bits 
+\(I_0 = I_0'\)\\
+donc \(I_1 = I_1'\)
+donc \(I_k = I_k' \Rightarrow V_k\) constante\\
+b/ \(V_0 = 2RI_0\)\\
+\(V_1 - V_0 = RI_1 = 2RI_0 = V_0\)\\
+\(V_n = 2V_0\)\\
+c/ Par récurrence : \begin{equation*}
+    V_{k+1} = 2V_k
+\end{equation*}\\
+d/  \begin{align*}
+    I &= \sum_{k=0}^{n-1} a_k I_k\\
+    &= \sum a_k V_k R\\
+    &= \sum a_k v_0 2^k R\\
+    &\Rightarrow R v_0 \sum a_k 2^k = I_0
+\end{align*}
+e/ Le temps de commutation des interrupteurs peut aller 
+jusqu'à une dizaine de ns\\
+f/ filtre passe bas caractérisé par tau
+fréquence de coupure equiv temps de réponse 
+\(T >> \tau >> T_e\)
+
+\noindent \colorbox{green}{Ex5}\\
+1/ \begin{align*}
+    f_m = \frac{n}{NT_e} \pm \frac{1}{NT_e}\\
+    \Delta f &= \frac{1}{NT_e}\\
+    \Delta f \leq \frac{1}{100}f_m\\
+    N \geq 250
+\end{align*}
+Donc \(T_e = 1ms\), \(T_{acqm} = 250ms\)\\
+2/ \begin{align*}
+    n_1 &= 184 \pm 1\\
+    n_2 &= 368 \pm 1\\
+    &= 2n_1\\
+    n_3 &= 553 \pm 1
+\end{align*}
+pas compatible\\
+3/ Dans le spectre sont présentes \(f_1, f_1 - f_2, f_1 + f_2\)
+\(f_1 + f_2\) manque \(> \frac{f_e}{2}\)\\
+\(f_1 = F'\)\\
+\(f_2 = F'-F = 164Hz\)\\
+\(f_1 + f_2 > 500Hz\)
+
+\end{document}

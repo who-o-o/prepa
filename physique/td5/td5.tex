@@ -1,0 +1,185 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\usepackage{setspace}              
+\usepackage{multicol}  
+\geometry{margin=0.5in}
+\definecolor{green}{RGB}{52, 235, 168}
+\definecolor{violet}{RGB}{165, 83, 237}
+\definecolor{lemon}{RGB}{170, 237, 83}
+\definecolor{red}{RGB}{240, 125, 84}
+\definecolor{blue}{RGB}{105, 255, 242}
+
+\begin{document} \noindent
+\colorbox{green}{Exercice 2}\\
+1/ 
+\begin{align*}
+    \phi &= -4\pi G M_{int}\\
+    \phi &= \iint_{(S)} \vec{g} \vec{dS} \\
+    &= -g4\pi r^2 \\
+    -4\pi G M_{int} &= -g4\pi r^2\\
+    \text{Donc } g &= \frac{GM_{int}}{r^2}\\
+    M_{int} &= \rho_T \times \frac{4}{3}\pi r^3\\
+    M_T &= \rho_T \frac{4}{3} \pi R^3\\
+    g_0 &= \frac{GM_T}{R^2}\\
+    g &= g_0 . \frac{r}{R}
+\end{align*}
+
+2/ PFD au train suivant \(\vec{u_x}\) : \begin{align*}
+    m \vec{a} &= m\vec{g} + \vec{R}\\
+    m\ddot{x} &= m\vec{g}.\vec{u_x} + 0\\
+    &= -mg_0 \frac{x}{R}\vec{u_r}.\vec{u_x}\\
+    &= -\frac{mg_0}{R}x\\
+    m\ddot{x} &+ \frac{g_0}{R}x = 0
+\end{align*}
+\(x(t) = Acos(\omega_0 t + \varphi)\) avec \(\omega_0 = \sqrt{\frac{g_0}{R}}\)\\
+\(x(0) = -a\) et \(\dot{x}(0) = 0\)\\
+Ainsi \(Acos(\varphi) = -a\) et \(Asin(\varphi) = 0\) 
+Donc \(\varphi = 0\) et A = -a\\
+Donc \(x(t) = -acos(\omega_0)\)
+
+\noindent \colorbox{green}{Exercice 3}\\
+\underline{Symétries :} \((M, \vec{u_z},\vec{u_r})\) et \((M, \vec{u_\theta}, \vec{u_r})\)\\
+\(\vec{E}(M) = E(M)\vec{u_r}\)
+Invariance de E(M) : Translation de M selon \(\vec{u_z}\) rotation selon \(\vec{u_z}\)\\
+Donc E(M) = E(r)\\
+Ainsi \(\vec{E}(M) = E(r)\vec{u_r}\)\\
+Gauss : Cylindre de hauteur h de rayon r : \(R_1 < r <R_2\)\\
+\(\phi = E(r)2\pi r h\) \(\phi = \frac{Q}{\varepsilon_0}\)
+\fbox{\(E(r) = \frac{Q}{2\pi \varepsilon h r}\)} avec \(R_1 < r < R_2\)\\
+2/ \begin{align*}
+    \mathcal{C} &= \int_{R_1}^{R_2} \vec{E}.\vec{dl}\\
+    &= \int_{R_1}^{R_2} E(r)dr\\
+    &= \int_{R_1}^{R_2} \frac{Q}{2\pi\varepsilon_0 hr} dr \\
+    \mathcal{C} &= \frac{Q}{2\pi \varepsilon_0 h}ln(\frac{R_2}{R_1})\\
+    &= V_1 - V_2
+\end{align*}
+3/ \begin{align*}
+    Q &= C(V_1 - V_2)\\
+    C &= \frac{Q}{V_1-V_2}\\
+    &= \frac{Q}{\frac{Q}{2\pi \varepsilon_0 h}ln(\frac{R_2}{R_1})}\\
+    C &= \frac{2\pi \varepsilon_0 h}{ln(\frac{R_2}{R_1})}
+\end{align*}
+4/ Application numérique : \fbox{C = 8.0 pF}\\
+5/ \begin{align*}
+    R_2 &= R_1 + C\\
+    ln(\frac{R_2}{R_1}) &= ln(1 + \frac{e}{R_1})\\
+    &\simeq \frac{e}{R_1} \text{ car } e<<R_1
+\end{align*}
+Donc \begin{align*}
+    c &\simeq \frac{2\pi \varepsilon_0 h}{\frac{e}{R_1}}\\
+    c &\simeq \frac{\varepsilon_0 2\pi R_1 h}{e}
+\end{align*}
+6/ \begin{align*}
+    (V_1 - V_2)_{max} = U_{max} &= E_0 e\\
+    &= 3000V
+\end{align*}\\
+7/ \begin{align*}
+    e_e &= \frac{1}{2}\varepsilon_0 E^2\\
+    &= \frac{1}{2} \varepsilon \frac{Q^2}{(2\pi \varepsilon_0)^2 h^2 r^2}\\
+    d\mathcal{E} &= e_e d\tau\\
+    &= e_e 2\pi rhdr \\
+    \mathcal{E} &= \int_{R_1}^{R_2} \frac{1}{\tau} \varepsilon_0 \frac{Q^2}{(2\pi\varepsilon_0)^2h^2r^2}2\pi rhdr\\
+    &= \frac{1}{2}\frac{Q^2}{2\pi\varepsilon_0 h}\int_{R_1}^{R_2} \frac{dr}{r}
+\end{align*}
+Donc \begin{align*}
+    \mathcal{E}&= \frac{1}{4\pi\varepsilon_0h Q^2}ln(\frac{R_2}{R_1})\\
+    &= \frac{1}{2}\frac{Q^2}{C}
+\end{align*}
+Donc \begin{align*}
+    C = \frac{2\pi\varepsilon_0 h}{ln(\frac{R_2}{R_1})}
+\end{align*}
+
+\noindent \colorbox{green}{Exercice 4} \\
+1/ \begin{align*}
+    \rho(r) &= \frac{dQ}{d\tau}\\
+    d\tau \rho(r) &= dQ\\
+    d\tau &= 4\pi r^2 dr
+\end{align*}
+Donc \fbox{\(dQ = \rho(r) 4\pi r^2dr\)}\\
+2/ \begin{align*}
+    \rho_m &= \frac{Q_{tot}}{V_{tot}} = \frac{Q_{tot}}{\frac{4}{3}\pi R^3}\\
+    Q_{tot}&= \int_{0}^{R}dQ\\
+    &= \int_{0}^{R} \rho(r)4\pi r^2 dr \\
+    &= 4\pi \rho_0 \int_{0}^{R} (r^2 - \frac{a^2 r^4}{R^2})dr\\
+    &= 4 \pi \rho_0 [\frac{r^3}{3}-\frac{a^2}{R^2}\frac{r^5}{5}]^R_0\\
+    &= 4\pi \rho_0 (\frac{R^3}{3}-a^2 \frac{R^3}{5})\\
+    Q_{tot} &= 4\pi \rho_0 R^3(\frac{1}{3}-\frac{a^2}{5})\\
+    \rho_m &= \rho_0 (1-\frac{3}{5}a^2)
+\end{align*}
+On a une répartition volumique de la charge et non linéique \\
+3/ Plan de symétrie : \\
+\((M, \vec{u_r}, \vec{u_\theta})\) plan de symétrie \\
+\((M, \vec{u_r}, \vec{u_\varphi})\)\\
+Donc \(\vec{E}=E(r, \theta. \varphi)\vec{u_r}\)\\
+Th de Gauss : \begin{align*}
+    \iint_{(S)} \vec{E}.\vec{dS} &= \frac{Q_{int}}{\varepsilon_0}\\
+    E(r) 4\pi r^2 &= \frac{Q_{int}}{\varepsilon_0}\\
+    r > R : \\
+    \vec{E}(M) &= \frac{\rho_0 R^3(\frac{1}{3} - \frac{a^2}{5})}{\varepsilon_0 r^2}
+\end{align*}
+Si \(r < R\): \begin{align*}
+    E(r)4\pi r^2 &= \frac{Q(r)}{\varepsilon_0}\\
+    Q(r) &= \int_{0}^{r} \rho_0 (1-\frac{a^2r^2}{R^2})4\pi r^2 dr \\
+    &= \rho_0 4\pi (\frac{r^3}{3}-\frac{a^2r^5}{5R^2})\\
+    \vec{E}(M) &= \frac{\rho_0}{\varepsilon_0}(\frac{r}{3} - \frac{a^2r^3}{5R^2}) \vec{u_r}
+\end{align*}
+Et donc \begin{align*}
+    \vec{E} &= -\vec{grad}(V)\\
+    E(r) &= - \frac{dV}{dr}
+\end{align*}
+Pour \(r > R\) \begin{align*}
+    V(r) = -\frac{1}{r}\frac{R^3}{\varepsilon_0}(\frac{1}{3}-\frac{a^2}{5})\frac{1}{r}
+\end{align*}
+Pour \(r < R\)\begin{align*}
+    V(M) = -\frac{\rho_0}{\varepsilon_0} (\frac{r^2}{6}-\frac{a^2 r^4}{20R^2}) + cste 
+\end{align*}
+cste déterminée avec \(V(R^-) = V(R^+)\)\\
+
+\noindent \colorbox{green}{Exercice 5} \begin{align*}
+    V(M) &= \frac{\sigma}{4\pi \varepsilon_0} \iint_{le disque} \frac{1}{\sqrt{r^2 + z^2}}dS\\
+    &= \frac{\sigma}{4\pi \varepsilon_0} \int_{0}^{2\pi} d\theta \int_{0}^{r} \frac{1}{\sqrt{r^2 + z^2}} dr\\
+    &= \frac{\sigma}{4\pi \varepsilon_0} 2\pi [\sqrt{r^2 + z^2}]_0^R\\
+    &= \frac{\sigma}{2\varepsilon_0} \sqrt{R^2 + z^2} - |z|
+\end{align*}
+Symétrie selon l'axe OM : \begin{align*}
+    \vec{E}(M) &= E(z)\vec{u_z}\\
+    E(z) &= -\frac{dV}{dz}
+\end{align*}\\
+Si \(z > 0, V = \frac{\sigma}{2\varepsilon_0}\sqrt{r^2 + z^2} - z\)\\
+donc \(E(z) = \frac{\sigma}{2\varepsilon_0}(\frac{z}{\sqrt{r^2 + z^2}}-1)\) \(z > 0\)\\
+Si \(z < 0\) \(E(z) = -\frac{\sigma}{2\varepsilon_0}(\frac{z}{\sqrt{z^2 + r^2}}-1)\) \(z < 0\)\\
+
+\noindent \colorbox{green}{Exercice 7}\\
+1/ \begin{align*}
+    \vec{G}(M) &= -G \frac{m}{r^2}\vec{u_r}\\
+    \vec{E}(M) &= \frac{1}{4\pi \varepsilon_0}\frac{q}{r^2} \vec{u_r}\\
+    \frac{1}{4\pi \varepsilon_0} &\sim -G \\
+    q &\sim m \\
+    \iint_{(S)} \vec{E}.\vec{dS} &= \frac{\iiint_{(V)} \rho.d\tau}{\varepsilon_0}\\
+    \iint_{(S)} \vec{G}.\vec{dS} &= -4\pi GM_{int} \\
+    &= -4\pi G \iiint \mu dt
+\end{align*}
+2/ \((M, \vec{u_r}, \vec{u_\theta})\), \((M, \vec{u_r}, \vec{u_\theta})\), \(\vec{G}(M) = G(M)\vec{u_r}\)\\
+si \(r < R_T\) : \(\vec{G}(M) = \frac{-G\mu_T \frac{4}{3}\pi R_T^3}{r^2}\vec{u_r}\)\\
+\(r > R_T\) :  \(\vec{G}(M) = -G\mu_T \frac{4}{3}\pi R_T^3\vec{u_r}\)\\
+\begin{align*}
+    G_{TP} &= G_T - G_m + G_p\\
+    &= (-G\mu_T \frac{4}{3}\pi R_T^3 + \frac{G\frac{4}{3}\pi(\mu_T - \mu_p) r^{-3}}{d^2})\vec{u_z}\\
+    \varepsilon &= \frac{G_T(M)-G_{TP}(M)}{G_T(M)}\\
+    &= 1 + \frac{-G_{TP}(M)}{G_T(M)}\\
+    &= - (1=\frac{\mu_P}{\mu_T})\frac{r'^3}{R_T d^2}
+\end{align*}
+4/ \(||\vec{g}|| \simeq 10 m.s^{-2}\)\\
+5/ \(\frac{||\vec{F_{ic}||}}{m} = 1.5 \times 10^{-2}\) 
+
+
+\end{document}
