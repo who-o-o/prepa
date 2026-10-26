@@ -142,10 +142,10 @@ P annulateur de u \begin{align*}
     &= dimKer(u^2 + u + id)
 \end{align*}
 Soit \(x \in Im(P_1(u))\)\begin{align*}
-    \exists t \in E \text{ tq } x = P_2(u)(t)\\
-    P_2(u)(x) = P_2(u) \circ P_1(u)(t)\\
-    = (P_2P_1)(u)(t)\\
-    = P(u)(t)\\
+    \exists t \in E \text{ tq } x &= P_1(u)(t)\\
+    P_2(u)(x) &= P_2(u) \circ P_1(u)(t)\\
+    &= (P_2P_1)(u)(t)\\
+    &= P(u)(t)\\
     &= 0 
 \end{align*}
 
@@ -201,7 +201,7 @@ Soit \(x \in Im(P_1(u))\)\begin{align*}
     &\Leftrightarrow \lambda_1 \lambda_2 \text{ sont les racines de } X^2 - 2X + 4 - 2n\\
     \Delta &= 4 - 4(4-2n)\\
     &= 4(2n-3)>0\\
-    \Rightarrow \{\lambda_1, \lambda_2\} &= \{1 + \sqrt{2n-3, 1-\sqrt{2n-3}}\}
+  \Rightarrow \{\lambda_1, \lambda_2\} &= \{1 + \sqrt{2n-3}, 1-\sqrt{2n-3}\}
 \end{align*}
 a4/ \(Sp(A) = \{\lambda_1, \lambda_2, 0\}\)\\
 \begin{equation*}
@@ -209,7 +209,7 @@ a4/ \(Sp(A) = \{\lambda_1, \lambda_2, 0\}\)\\
 \end{equation*}
 A diagonalisable\\
 Donc \(\Pi_A\) scindé simple\\
-DOnc \(\Pi_A = X^3 - 2X^2 + 4(-2n)X\)\\
+Donc \(\Pi_A = X^3 - 2X^2 + 4(-2n)X\)\\
 \(\Pi_A = 0\)\\
 Donc \(A^3 - 2A^2 + (4-2n)A = 0\)\\
 On suppose \(A^k = \lambda_k A + \mu_k A^2\)\\
@@ -227,6 +227,13 @@ je vois pas le tableau\\
 Donc \begin{equation*}
     A^k = (Q\Pi_A)(A) + \lambda_k A^2 + \mu_k A + \nu_k I_n
 \end{equation*}\\
+Donc \begin{align*}
+    X^k = Q\Pi_A + &\lambda_k X^2 + \mu_k X + \nu_k \\ 
+    \text{On évalue en 0 : }\\
+    0 &= Q\Pi_A(0) + \nu_k\\
+    &\Leftrightarrow \nu_k = 0
+\end{align*}
+
 
 \noindent \colorbox{green}{260.5}\\
 \underline{\(\varphi\) est linéaire} \\
