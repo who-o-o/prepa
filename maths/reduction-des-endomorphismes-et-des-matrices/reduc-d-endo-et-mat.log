@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.22)  25 OCT 2026 16:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.10.22)  27 OCT 2026 15:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/who/Documents/prepa/mpi/maths/reduction-des-endomorphismes-et-des-matrices/reduc-d-endo-et-mat
-(/home/who/Documents/prepa/mpi/maths/reduction-des-endomorphismes-et-des-matrices/reduc-d-endo-et-mat.tex
+**reduc-d-endo-et-mat.tex
+(./reduc-d-endo-et-mat.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -282,7 +282,8 @@ File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count307
 \pgfsyssoftpath@bigbuffer@items=\count308
-) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
@@ -339,7 +340,8 @@ File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen269
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
@@ -768,13 +770,13 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20920 strings out of 469515
- 448379 string characters out of 5470806
+ 20919 strings out of 469515
+ 448138 string characters out of 5470806
  889497 words of memory out of 5000000
  49197 multiletter control sequences out of 15000+600000
  632629 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 98i,16n,108p,532b,203s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,16n,108p,455b,203s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy5.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi5.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concrete/ccr5.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy7.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccex10.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concrete/ccr7.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi7.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccsy10.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concmath-fonts/xccmi10.600pk> </home/who/.texlive/texmf-var/fonts/pk/ljfour/public/concrete/ccr10.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb>
 Output written on reduc-d-endo-et-mat.pdf (7 pages, 80901 bytes).
 PDF statistics:
